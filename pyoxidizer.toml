@@ -1,0 +1,33 @@
+# pyoxidizer.toml
+
+[python]
+# Укажите версию Python (по умолчанию 3.9)
+# Вы можете изменить версию Python, если необходимо
+python_version = "3.12"
+
+[dist]
+# Укажите имя вашего приложения
+app_name = "MIRA Port"
+
+[target]
+# Настройка цели сборки
+triples = ["x86_64-apple-darwin"]
+
+[target.x86_64-apple-darwin]
+# Настройка для macOS
+type = "mac_app_bundle"
+
+[target.x86_64-apple-darwin.mac_app_bundle]
+app_name = "ProformaApp"
+icon = "icons/app_icon.icns"
+
+[build]
+# Укажите путь к вашему скрипту запуска
+script = "main.py"
+
+[files]
+# Укажите файлы и папки, которые нужно включить
+paths = [
+    { path = "icons", exclude = false },
+    { path = "templates", exclude = false },
+]
