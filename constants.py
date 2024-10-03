@@ -54,3 +54,5 @@ def resource_path(relative_path):
 # Использование
 LOGO_PATH = resource_path('icons/app_icon.icns')
 TEMPLATE_PATH = resource_path('templates/template.xlsx')
+START_ROW_FEES = 23
+START_ROW_AGENCY_FEES = 45

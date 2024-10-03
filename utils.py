@@ -1,6 +1,7 @@
 # utils.py
 
 import sys
+import os  # Добавлен импорт os
 import math
 from tkinter import messagebox
 
@@ -46,3 +47,14 @@ def parse_overtime(overtime_str):
 def ceil_value(value):
     """Округляет значение вверх до ближайшего целого числа."""
     return math.ceil(value)
+
+def resource_path(relative_path):
+    """Получает абсолютный путь к ресурсу, работает для dev и упакованного приложения."""
+    if getattr(sys, 'frozen', False):
+        # Если приложение упаковано
+        base_path = os.path.dirname(sys.executable)
+    else:
+        # Если запускается в режиме разработки
+        base_path = os.path.dirname(os.path.abspath(__file__))
+    return os.path.join(base_path, relative_path)
+

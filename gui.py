@@ -2,15 +2,20 @@
 import sys
 import os
 import tempfile
+import shutil
+import subprocess
+import logging
+from tkinter import messagebox, filedialog
+
 import ttkbootstrap as ttk
 from ttkbootstrap.constants import *
 from ttkbootstrap import Style
-from tkinter import messagebox, filedialog
 from PIL import Image, ImageTk
-import subprocess
-import shutil
 import openpyxl
-import logging
+
+from calculations import FeeCalculator
+from utils import format_amount, parse_input, resource_path
+from constants import START_ROW_FEES, START_ROW_AGENCY_FEES, LOGO_PATH, TEMPLATE_PATH
 
 logger = logging.getLogger(__name__)
 
@@ -51,9 +56,9 @@ class ScrollableFrame(ttk.Frame):
 
     def _on_mousewheel(self, event):
         if sys.platform == 'darwin':
-            self.master.event_generate("<MouseWheel>", delta=-1 * event.delta)
+            self.scrollable_frame.yview_scroll(-1 * (event.delta), "units")
         else:
-            self.master.event_generate("<MouseWheel>", delta=event.delta)
+            self.scrollable_frame.yview_scroll(-1 * (event.delta // 120), "units")
 
     def _bind_to_mousewheel(self, event):
         self.bind_all("<MouseWheel>", self._on_mousewheel)
@@ -76,29 +81,32 @@ class ProformaApp:
         self.last_pdf_path = None  # Для хранения пути к последнему сгенерированному PDF
 
     def set_app_icon(self):
-        # Путь к файлу .icns
-        icon_path = os.path.join('icons', 'app_icon.icns')
-
-        if sys.platform == 'darwin':
+        if sys.platform.startswith('win'):
+            icon_path = resource_path(os.path.join('icons', 'app_icon.ico'))
             try:
-                app = NSApplication.sharedApplication()
-                icon = NSImage.alloc().initByReferencingFile_(icon_path)
-                if icon:
-                    app.setApplicationIconImage_(icon)
-                else:
-                    print("Не удалось загрузить иконку приложения.")
-            except Exception as e:
-                logger.exception("Необработанное исключение")
-                print(f"Ошибка при установке иконки приложения: {e}")
-        else:
-            # Для других платформ можно использовать стандартный метод
-            try:
-                # Для Windows используйте .ico файл
-                icon_path = os.path.join('icons', 'app_icon.ico')
                 self.root.iconbitmap(icon_path)
             except Exception as e:
-                logger.exception("Необработанное исключение")
-                print(f"Ошибка при установке иконки приложения: {e}")
+                logger.exception("Ошибка при установке иконки приложения: %s", e)
+        elif sys.platform.startswith('darwin'):
+            # Tkinter на macOS может не поддерживать .icns файлы напрямую
+            # Рекомендуется использовать упаковщики, такие как Platypus или py2app, для установки иконки
+            try:
+                # Альтернативный метод установки иконки
+                # Можно использовать PhotoImage или другие способы
+                icon_path = resource_path(os.path.join('icons', 'app_icon.png'))
+                image = Image.open(icon_path)
+                photo = ImageTk.PhotoImage(image)
+                self.root.iconphoto(False, photo)
+            except Exception as e:
+                logger.exception("Ошибка при установке иконки приложения: %s", e)
+        else:
+            # Для Linux и других платформ
+            icon_path = resource_path(os.path.join('icons', 'app_icon.png'))
+            try:
+                photo = ImageTk.PhotoImage(file=icon_path)
+                self.root.iconphoto(False, photo)
+            except Exception as e:
+                logger.exception("Ошибка при установке иконки приложения: %s", e)
 
     def create_widgets(self):
         # Создаем Notebook
@@ -582,7 +590,7 @@ class ProformaApp:
                             cell.value = cell.value.replace(key, value)
 
         # Добавление таблицы сборов
-        start_row = 23  # Начальная строка для вывода сборов
+        start_row = START_ROW_FEES  # Начальная строка для вывода сборов
         current_row = start_row
 
         # Заполнение таблицы сборов (только Dues)
@@ -594,7 +602,7 @@ class ProformaApp:
                 current_row += 1
 
         # Устанавливаем фиксированную строку для Agency fee и Bank charges
-        agency_start_row = 45  # Укажите нужный номер строки
+        agency_start_row = START_ROW_AGENCY_FEES  # Укажите нужный номер строки
         ws.cell(row=agency_start_row, column=1).value = "Agency fee"
         ws.cell(row=agency_start_row, column=7).value = format_amount(parse_input(self.entries['agency_fee'].get()))
         agency_start_row += 1
