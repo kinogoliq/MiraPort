@@ -5,6 +5,7 @@ import tempfile
 import shutil
 import subprocess
 import logging
+import tkinter as tk
 from tkinter import messagebox, filedialog
 
 import ttkbootstrap as ttk
@@ -16,6 +17,7 @@ import openpyxl
 from calculations import FeeCalculator
 from utils import format_amount, parse_input, resource_path
 from constants import START_ROW_FEES, START_ROW_AGENCY_FEES, LOGO_PATH, TEMPLATE_PATH
+from agency_fee import calculate_cv, show_agency_fee_table, get_agency_fee
 
 logger = logging.getLogger(__name__)
 
@@ -27,6 +29,7 @@ logger = logging.getLogger(__name__)
 from calculations import FeeCalculator
 from constants import LOGO_PATH, TEMPLATE_PATH
 from utils import format_amount, parse_input
+
 
 class ScrollableFrame(ttk.Frame):
     def __init__(self, container, *args, **kwargs):
@@ -66,6 +69,7 @@ class ScrollableFrame(ttk.Frame):
     def _unbind_from_mousewheel(self, event):
         self.unbind_all("<MouseWheel>")
 
+
 class ProformaApp:
     def __init__(self, root):
         self.root = root
@@ -79,6 +83,8 @@ class ProformaApp:
 
         self.create_widgets()
         self.last_pdf_path = None  # Для хранения пути к последнему сгенерированному PDF
+        # Добавьте инициализацию cv
+        self.cv = 0
 
     def set_app_icon(self):
         if sys.platform.startswith('win'):
@@ -213,6 +219,15 @@ class ProformaApp:
         self.entries['bank_charges'].insert(0, "190.00")
         self.entries['vat'].insert(0, "20")
 
+        # Кнопка расчета CV
+        calculate_cv_button = ttk.Button(
+            self.input_frame,
+            text="Рассчитать CV и Agency Fee",
+            command=self.calculate_cv_and_agency_fee,
+            bootstyle='primary'
+        )
+        calculate_cv_button.pack(pady=10)
+
         # Кнопка расчета с иконкой
         # Загрузка иконки
         try:
@@ -287,6 +302,84 @@ class ProformaApp:
 
         add_fee_button = ttk.Button(fees_frame, text="Добавить Fee", command=add_additional_fee, bootstyle='success')
         add_fee_button.pack(anchor='w', padx=5, pady=5)
+
+        # После создания полей ввода для lbp, beam, rdm, добавьте обработчики событий
+        # self.entries['lbp'].bind("<FocusOut>", self.on_dimension_change)
+        # self.entries['beam'].bind("<FocusOut>", self.on_dimension_change)
+        # self.entries['rdm'].bind("<FocusOut>", self.on_dimension_change)
+
+    def calculate_cv_and_agency_fee(self):
+        """Метод для расчёта CV и Agency Fee при нажатии кнопки."""
+        try:
+            lbp_str = self.entries['lbp'].get().strip()
+            beam_str = self.entries['beam'].get().strip()
+            rdm_str = self.entries['rdm'].get().strip()
+
+            if not lbp_str or not beam_str or not rdm_str:
+                messagebox.showwarning("Предупреждение", "Пожалуйста, заполните все поля LBP, Beam и RDM.")
+                return
+
+            lbp = parse_input(lbp_str)
+            beam = parse_input(beam_str)
+            rdm = parse_input(rdm_str)
+
+            self.cv = calculate_cv(lbp, beam, rdm)
+            logger.info(f"CV рассчитан: {self.cv}")
+
+            # Обновляем поле Agency Fee с полученным значением
+            agency_fee = get_agency_fee(self.cv)
+            if agency_fee is not None:
+                self.entries['agency_fee'].delete(0, tk.END)
+                self.entries['agency_fee'].insert(0, format_amount(agency_fee))
+            else:
+                messagebox.showwarning("Внимание", "CV не соответствует ни одному диапазону в таблице Agency Fee.")
+
+            # Отображаем всплывающее окно с таблицей agency fee
+            show_agency_fee_table(self.cv)
+
+        except ValueError as e:
+            logger.error(f"Ошибка при вводе размеров: {e}")
+            messagebox.showerror("Ошибка ввода",
+                                 "Пожалуйста, введите корректные числовые значения для LBP, Beam и RDM.")
+
+    def on_dimension_change(self, event):
+        try:
+            lbp_str = self.entries['lbp'].get().strip()
+            beam_str = self.entries['beam'].get().strip()
+            rdm_str = self.entries['rdm'].get().strip()
+
+            if not lbp_str or not beam_str or not rdm_str:
+                # Если одно из полей пустое, не выполняем расчёт
+                return
+
+            lbp = parse_input(lbp_str)
+            beam = parse_input(beam_str)
+            rdm = parse_input(rdm_str)
+
+            # Обновляем поле Agency Fee с полученным значением
+            agency_fee = get_agency_fee(self.cv)
+            if agency_fee is not None:
+                self.entries['agency_fee'].delete(0, tk.END)
+                self.entries['agency_fee'].insert(0, format_amount(agency_fee))
+            else:
+                messagebox.showwarning("Внимание", "CV не соответствует ни одному диапазону в таблице Agency Fee.")
+
+            # Отображаем всплывающее окно с таблицей agency fee
+            show_agency_fee_table(self.cv)
+
+        except ValueError as e:
+            logger.error(f"Ошибка при вводе размеров: {e}")
+            messagebox.showerror("Ошибка ввода",
+                                 "Пожалуйста, введите корректные числовые значения для LBP, Beam и RDM.")
+
+    def validate_numeric_input(self, action, value_if_allowed):
+        if action != '1':  # Если не вставка символа, пропускаем
+            return True
+        try:
+            float(value_if_allowed.replace(',', '.'))
+            return True
+        except ValueError:
+            return False
 
     def remove_additional_due(self, due_frame):
         due_frame.destroy()
@@ -516,11 +609,11 @@ class ProformaApp:
             totals = self.calculator.fixed_totals[rate]
             percentage = int(rate * 100)
             self.fixed_totals_tree.insert("", "end", values=(
-            f"Total fee with {percentage}% overtime", format_amount(totals['total_fee'])))
+                f"Total fee with {percentage}% overtime", format_amount(totals['total_fee'])))
             self.fixed_totals_tree.insert("", "end", values=(
-            f"Total agency fee (Basis {percentage}% overtime)", format_amount(totals['total_agency_fee'])))
+                f"Total agency fee (Basis {percentage}% overtime)", format_amount(totals['total_agency_fee'])))
             self.fixed_totals_tree.insert("", "end", values=(
-            f"Grand total basis {percentage}% overtime", format_amount(totals['grand_total'])))
+                f"Grand total basis {percentage}% overtime", format_amount(totals['grand_total'])))
             # Добавляем пустую строку для разделения
             self.fixed_totals_tree.insert("", "end", values=("", ""))
 
@@ -538,7 +631,8 @@ class ProformaApp:
 
         # Обновление итоговых сумм
         self.subtotal_dues_label.config(text=f"Subtotal (Dues): {format_amount(self.calculator.subtotal_dues)}")
-        self.subtotal_agfee_label.config(text=f"Subtotal Agency Fees: {format_amount(self.calculator.subtotal_agency_fees)}")
+        self.subtotal_agfee_label.config(
+            text=f"Subtotal Agency Fees: {format_amount(self.calculator.subtotal_agency_fees)}")
         self.total_label.config(text=f"Total: {format_amount(self.calculator.total_amount)}")
 
     def save_pdf(self):
@@ -573,7 +667,8 @@ class ProformaApp:
             elif sys.platform.startswith('darwin') or sys.platform.startswith('linux'):
                 subprocess.run(['lp', tmp_pdf_path])
             else:
-                messagebox.showwarning("Предупреждение", "Неизвестная операционная система. Не удаётся отправить на печать автоматически.")
+                messagebox.showwarning("Предупреждение",
+                                       "Неизвестная операционная система. Не удаётся отправить на печать автоматически.")
                 return
 
             os.remove(tmp_pdf_path)
@@ -599,7 +694,8 @@ class ProformaApp:
             elif sys.platform.startswith('linux'):
                 subprocess.run(['xdg-open', tmp_pdf_path])
             else:
-                messagebox.showwarning("Предупреждение", "Неизвестная операционная система. Не удаётся открыть PDF автоматически.")
+                messagebox.showwarning("Предупреждение",
+                                       "Неизвестная операционная система. Не удаётся открыть PDF автоматически.")
                 return
 
             self.last_pdf_path = tmp_pdf_path
@@ -612,7 +708,8 @@ class ProformaApp:
         logger.info(f"Начало генерации PDF по пути: {pdf_path}")
         # Проверка наличия шаблона Excel
         if not os.path.exists(TEMPLATE_PATH):
-            messagebox.showerror("Ошибка", f"Шаблон Excel не найден. Убедитесь, что '{TEMPLATE_PATH}' находится в директории проекта.")
+            messagebox.showerror("Ошибка",
+                                 f"Шаблон Excel не найден. Убедитесь, что '{TEMPLATE_PATH}' находится в директории проекта.")
             return
 
         # Загрузка шаблона Excel
@@ -738,13 +835,16 @@ class ProformaApp:
         if sys.platform.startswith('darwin'):
             soffice_path = "/Applications/LibreOffice.app/Contents/MacOS/soffice"
         elif sys.platform.startswith('win'):
-            soffice_path = os.path.join(os.environ.get("PROGRAMFILES", "C:\\Program Files"), "LibreOffice", "program", "soffice.exe")
+            soffice_path = os.path.join(os.environ.get("PROGRAMFILES", "C:\\Program Files"), "LibreOffice", "program",
+                                        "soffice.exe")
             if not os.path.exists(soffice_path):
-                soffice_path = os.path.join(os.environ.get("PROGRAMFILES(X86)", "C:\\Program Files (x86)"), "LibreOffice", "program", "soffice.exe")
+                soffice_path = os.path.join(os.environ.get("PROGRAMFILES(X86)", "C:\\Program Files (x86)"),
+                                            "LibreOffice", "program", "soffice.exe")
         elif sys.platform.startswith('linux'):
             soffice_path = "/usr/bin/soffice"
         else:
-            messagebox.showerror("Ошибка", "Неизвестная операционная система. Необходимо вручную указать путь к 'soffice'.")
+            messagebox.showerror("Ошибка",
+                                 "Неизвестная операционная система. Необходимо вручную указать путь к 'soffice'.")
             return None
 
         if not os.path.exists(soffice_path):

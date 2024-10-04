@@ -60,7 +60,7 @@ class Fee:
 class FeeCalculator:
     def __init__(self, inputs):
         self.inputs = inputs
-        self.cv = 0.0
+        self.cv = inputs.get('cv', 0)
         self.fees = []
         self.additional_dues = []
         self.additional_fees = []

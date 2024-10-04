@@ -14,7 +14,12 @@ def parse_input(value, is_percentage=False):
     :return: Число с плавающей точкой.
     :raises ValueError: Если значение не может быть преобразовано.
     """
+    value = value.strip()
+    if not value:
+        raise ValueError("Значение не может быть пустым.")
+
     try:
+        value = value.replace(' ', '')  # Удаляем пробелы
         value = value.replace(',', '.')
         if is_percentage:
             return float(value) / 100
