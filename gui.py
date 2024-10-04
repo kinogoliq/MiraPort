@@ -207,8 +207,8 @@ class ProformaApp:
         # Значения по умолчанию
         self.entries['miles_inward_in'].insert(0, "1")
         self.entries['miles_inward_out'].insert(0, "1")
-        self.entries['miles_outward_in'].insert(0, "1")
-        self.entries['miles_outward_out'].insert(0, "1")
+        self.entries['miles_outward_in'].insert(0, "14")
+        self.entries['miles_outward_out'].insert(0, "14")
         self.entries['agency_fee'].insert(0, "0")
         self.entries['bank_charges'].insert(0, "190.00")
         self.entries['vat'].insert(0, "20")
@@ -502,16 +502,10 @@ class ProformaApp:
         self.tree.insert("", "end", values=("", "", ""))
 
         # Добавление итоговых сумм по текущему расчёту
-        self.tree.insert("", "end", values=("Subtotal (Dues)", "", format_amount(self.calculator.subtotal_dues)))
-        self.tree.insert("", "end",
-                         values=("Subtotal Agency Fees", "", format_amount(self.calculator.subtotal_agency_fees)))
-        self.tree.insert("", "end", values=("Total", "", format_amount(self.calculator.total_amount)))
-
-        # Добавление итоговых сумм по текущему расчёту
-        self.tree.insert("", "end", values=("Subtotal (Dues)", "", format_amount(self.calculator.subtotal_dues)))
-        self.tree.insert("", "end",
-                         values=("Subtotal Agency Fees", "", format_amount(self.calculator.subtotal_agency_fees)))
-        self.tree.insert("", "end", values=("Total", "", format_amount(self.calculator.total_amount)))
+        # self.tree.insert("", "end", values=("Subtotal (Dues)", "", format_amount(self.calculator.subtotal_dues)))
+        # self.tree.insert("", "end",
+        #                  values=("Subtotal Agency Fees", "", format_amount(self.calculator.subtotal_agency_fees)))
+        # self.tree.insert("", "end", values=("Total", "", format_amount(self.calculator.total_amount)))
 
         # Очистка предыдущих результатов в fixed_totals_tree
         for item in self.fixed_totals_tree.get_children():
@@ -543,9 +537,9 @@ class ProformaApp:
         #         self.tree.insert("", "end", values=("", "", ""))  # Пустая строка для разделения
 
         # Обновление итоговых сумм
-        # self.subtotal_dues_label.config(text=f"Subtotal (Dues): {format_amount(self.calculator.subtotal_dues)}")
-        # self.subtotal_agfee_label.config(text=f"Subtotal Agency Fees: {format_amount(self.calculator.subtotal_agency_fees)}")
-        # self.total_label.config(text=f"Total: {format_amount(self.calculator.total_amount)}")
+        self.subtotal_dues_label.config(text=f"Subtotal (Dues): {format_amount(self.calculator.subtotal_dues)}")
+        self.subtotal_agfee_label.config(text=f"Subtotal Agency Fees: {format_amount(self.calculator.subtotal_agency_fees)}")
+        self.total_label.config(text=f"Total: {format_amount(self.calculator.total_amount)}")
 
     def save_pdf(self):
         if not hasattr(self, 'calculator'):
