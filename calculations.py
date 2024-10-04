@@ -68,6 +68,9 @@ class FeeCalculator:
         self.subtotal_agency_fees = 0.0
         self.total_vat = 0.0
         self.total_amount = 0.0
+        # Добавляем атрибуты для фиксированных ставок овертайма
+        self.fixed_overtime_rates = [0.25, 0.50, 1.00]  # 25%, 50%, 100%
+        self.fixed_totals = {}
 
     def calculate_cv(self):
         lbp = parse_input(self.inputs['lbp'])
@@ -160,6 +163,25 @@ class FeeCalculator:
             self.subtotal_agency_fees += fee['amount']
 
         self.total_amount = self.subtotal_dues + self.subtotal_agency_fees
+
+    def calculate_fixed_overtime_totals(self):
+        for rate in self.fixed_overtime_rates:
+            # Создаём копию входных данных с заданной ставкой овертайма
+            fixed_inputs = self.inputs.copy()
+            fixed_inputs['overtime_in'] = f"{int(rate * 100)}%"
+            fixed_inputs['overtime_out'] = f"{int(rate * 100)}%"
+
+            # Создаём временный калькулятор для расчёта
+            temp_calculator = FeeCalculator(fixed_inputs)
+            temp_calculator.calculate_fees()
+            temp_calculator.calculate_totals()
+
+            # Сохраняем результаты
+            self.fixed_totals[rate] = {
+                'total_fee': temp_calculator.subtotal_dues,  # Или другой соответствующий атрибут
+                'total_agency_fee': temp_calculator.subtotal_agency_fees,
+                'grand_total': temp_calculator.total_amount
+            }
 
     def get_fee_display_data(self):
         data = []

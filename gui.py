@@ -411,6 +411,31 @@ class ProformaApp:
             display_button.image = display_icon
         display_button.pack(side=LEFT, padx=5)
 
+        # Создаём фрейм для итогов по фиксированным ставкам овертайма
+        fixed_totals_frame = ttk.Frame(self.result_frame)
+        fixed_totals_frame.pack(fill=BOTH, expand=True, pady=10)
+
+        # Добавляем заголовок
+        fixed_totals_label = ttk.Label(fixed_totals_frame, text="Итоги по фиксированным ставкам овертайма",
+                                       font=('Helvetica', 12, 'bold'))
+        fixed_totals_label.pack(anchor='w')
+
+        # Создаём таблицу для итогов
+        fixed_totals_columns = ("Description", "Amount")
+        self.fixed_totals_tree = ttk.Treeview(fixed_totals_frame, columns=fixed_totals_columns, show="headings")
+        self.fixed_totals_tree.heading("Description", text="Описание")
+        self.fixed_totals_tree.heading("Amount", text="Сумма")
+
+        self.fixed_totals_tree.column("Description", width=300, anchor="w")
+        self.fixed_totals_tree.column("Amount", width=100, anchor="e")
+
+        self.fixed_totals_tree.pack(side='left', fill='both', expand=True)
+
+        fixed_totals_scrollbar = ttk.Scrollbar(fixed_totals_frame, orient="vertical",
+                                               command=self.fixed_totals_tree.yview)
+        self.fixed_totals_tree.configure(yscrollcommand=fixed_totals_scrollbar.set)
+        fixed_totals_scrollbar.pack(side='right', fill='y')
+
     def get_input_values(self):
         inputs = {}
         for key, entry in self.entries.items():
@@ -437,6 +462,8 @@ class ProformaApp:
             self.calculator = FeeCalculator(inputs)
             self.calculator.calculate_fees()
             self.calculator.calculate_totals()
+            # Вызов нового метода для расчёта фиксированных ставок овертайма
+            self.calculator.calculate_fixed_overtime_totals()
             self.update_results()
             logger.info("Расчет успешно завершен")
         except Exception as e:
@@ -471,10 +498,54 @@ class ProformaApp:
             if fee_data[0] not in ["Agency fee", "Bank charges"]:
                 self.tree.insert("", "end", values=fee_data)
 
+        # Добавление пустой строки для разделения
+        self.tree.insert("", "end", values=("", "", ""))
+
+        # Добавление итоговых сумм по текущему расчёту
+        self.tree.insert("", "end", values=("Subtotal (Dues)", "", format_amount(self.calculator.subtotal_dues)))
+        self.tree.insert("", "end",
+                         values=("Subtotal Agency Fees", "", format_amount(self.calculator.subtotal_agency_fees)))
+        self.tree.insert("", "end", values=("Total", "", format_amount(self.calculator.total_amount)))
+
+        # Добавление итоговых сумм по текущему расчёту
+        self.tree.insert("", "end", values=("Subtotal (Dues)", "", format_amount(self.calculator.subtotal_dues)))
+        self.tree.insert("", "end",
+                         values=("Subtotal Agency Fees", "", format_amount(self.calculator.subtotal_agency_fees)))
+        self.tree.insert("", "end", values=("Total", "", format_amount(self.calculator.total_amount)))
+
+        # Очистка предыдущих результатов в fixed_totals_tree
+        for item in self.fixed_totals_tree.get_children():
+            self.fixed_totals_tree.delete(item)
+
+        # Добавление итогов по фиксированным ставкам овертайма
+        for rate in sorted(self.calculator.fixed_totals.keys()):
+            totals = self.calculator.fixed_totals[rate]
+            percentage = int(rate * 100)
+            self.fixed_totals_tree.insert("", "end", values=(
+            f"Total fee with {percentage}% overtime", format_amount(totals['total_fee'])))
+            self.fixed_totals_tree.insert("", "end", values=(
+            f"Total agency fee (Basis {percentage}% overtime)", format_amount(totals['total_agency_fee'])))
+            self.fixed_totals_tree.insert("", "end", values=(
+            f"Grand total basis {percentage}% overtime", format_amount(totals['grand_total'])))
+            # Добавляем пустую строку для разделения
+            self.fixed_totals_tree.insert("", "end", values=("", ""))
+
+        # Добавление дополнительных таблиц с фиксированными ставками овертайма
+        # for rate, totals in self.calculator.fixed_totals.items():
+        #     for rate, totals in self.calculator.fixed_totals.items():
+        #         percentage = int(rate * 100)
+        #         self.tree.insert("", "end", values=(
+        #         f"Total fee with {percentage}% overtime", "", format_amount(totals['total_fee'])))
+        #         self.tree.insert("", "end", values=(
+        #         f"Total agency fee (Basis {percentage}% overtime)", "", format_amount(totals['total_agency_fee'])))
+        #         self.tree.insert("", "end", values=(
+        #         f"Grand total basis {percentage}% overtime", "", format_amount(totals['grand_total'])))
+        #         self.tree.insert("", "end", values=("", "", ""))  # Пустая строка для разделения
+
         # Обновление итоговых сумм
-        self.subtotal_dues_label.config(text=f"Subtotal (Dues): {format_amount(self.calculator.subtotal_dues)}")
-        self.subtotal_agfee_label.config(text=f"Subtotal Agency Fees: {format_amount(self.calculator.subtotal_agency_fees)}")
-        self.total_label.config(text=f"Total: {format_amount(self.calculator.total_amount)}")
+        # self.subtotal_dues_label.config(text=f"Subtotal (Dues): {format_amount(self.calculator.subtotal_dues)}")
+        # self.subtotal_agfee_label.config(text=f"Subtotal Agency Fees: {format_amount(self.calculator.subtotal_agency_fees)}")
+        # self.total_label.config(text=f"Total: {format_amount(self.calculator.total_amount)}")
 
     def save_pdf(self):
         if not hasattr(self, 'calculator'):
@@ -579,6 +650,16 @@ class ProformaApp:
             # Добавление Agency fee и Bank charges
             '{{agency_fee}}': format_amount(parse_input(self.entries['agency_fee'].get())),
             '{{bank_charges}}': format_amount(parse_input(self.entries['bank_charges'].get())),
+            # Добавление новых плейсхолдеров для фиксированных ставок овертайма
+            '{{total_fee_25_ot}}': format_amount(self.calculator.fixed_totals[0.25]['total_fee']),
+            '{{total_agency_fee_25_ot}}': format_amount(self.calculator.fixed_totals[0.25]['total_agency_fee']),
+            '{{grand_total_25_ot}}': format_amount(self.calculator.fixed_totals[0.25]['grand_total']),
+            '{{total_fee_50_ot}}': format_amount(self.calculator.fixed_totals[0.50]['total_fee']),
+            '{{total_agency_fee_50_ot}}': format_amount(self.calculator.fixed_totals[0.50]['total_agency_fee']),
+            '{{grand_total_50_ot}}': format_amount(self.calculator.fixed_totals[0.50]['grand_total']),
+            '{{total_fee_100_ot}}': format_amount(self.calculator.fixed_totals[1.00]['total_fee']),
+            '{{total_agency_fee_100_ot}}': format_amount(self.calculator.fixed_totals[1.00]['total_agency_fee']),
+            '{{grand_total_100_ot}}': format_amount(self.calculator.fixed_totals[1.00]['grand_total']),
         }
 
         # Замена плейсхолдеров в шаблоне

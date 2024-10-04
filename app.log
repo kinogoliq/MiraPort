@@ -1810,3 +1810,419 @@ FileNotFoundError: [Errno 2] No such file or directory: '/Users/mangalor/Pycharm
 2024-10-03 15:09:44,342 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 57 9
 2024-10-03 15:09:44,342 [DEBUG] PIL.PngImagePlugin: STREAM b'tEXt' 78 25
 2024-10-03 15:09:44,342 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 115 8192
+2024-10-03 15:25:41,830 [INFO] __main__: Запуск приложения
+2024-10-03 15:25:42,190 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-03 15:25:42,190 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 41 9
+2024-10-03 15:25:42,190 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 62 143839
+2024-10-03 15:25:42,212 [DEBUG] PIL.Image: Importing BlpImagePlugin
+2024-10-03 15:25:42,213 [DEBUG] PIL.Image: Importing BmpImagePlugin
+2024-10-03 15:25:42,213 [DEBUG] PIL.Image: Importing BufrStubImagePlugin
+2024-10-03 15:25:42,213 [DEBUG] PIL.Image: Importing CurImagePlugin
+2024-10-03 15:25:42,214 [DEBUG] PIL.Image: Importing DcxImagePlugin
+2024-10-03 15:25:42,214 [DEBUG] PIL.Image: Importing DdsImagePlugin
+2024-10-03 15:25:42,216 [DEBUG] PIL.Image: Importing EpsImagePlugin
+2024-10-03 15:25:42,216 [DEBUG] PIL.Image: Importing FitsImagePlugin
+2024-10-03 15:25:42,217 [DEBUG] PIL.Image: Importing FliImagePlugin
+2024-10-03 15:25:42,217 [DEBUG] PIL.Image: Importing FpxImagePlugin
+2024-10-03 15:25:42,218 [DEBUG] PIL.Image: Image: failed to import FpxImagePlugin: No module named 'olefile'
+2024-10-03 15:25:42,218 [DEBUG] PIL.Image: Importing FtexImagePlugin
+2024-10-03 15:25:42,218 [DEBUG] PIL.Image: Importing GbrImagePlugin
+2024-10-03 15:25:42,218 [DEBUG] PIL.Image: Importing GifImagePlugin
+2024-10-03 15:25:42,218 [DEBUG] PIL.Image: Importing GribStubImagePlugin
+2024-10-03 15:25:42,218 [DEBUG] PIL.Image: Importing Hdf5StubImagePlugin
+2024-10-03 15:25:42,218 [DEBUG] PIL.Image: Importing IcnsImagePlugin
+2024-10-03 15:25:42,219 [DEBUG] PIL.Image: Importing IcoImagePlugin
+2024-10-03 15:25:42,220 [DEBUG] PIL.Image: Importing ImImagePlugin
+2024-10-03 15:25:42,220 [DEBUG] PIL.Image: Importing ImtImagePlugin
+2024-10-03 15:25:42,220 [DEBUG] PIL.Image: Importing IptcImagePlugin
+2024-10-03 15:25:42,221 [DEBUG] PIL.Image: Importing JpegImagePlugin
+2024-10-03 15:25:42,221 [DEBUG] PIL.Image: Importing Jpeg2KImagePlugin
+2024-10-03 15:25:42,221 [DEBUG] PIL.Image: Importing McIdasImagePlugin
+2024-10-03 15:25:42,221 [DEBUG] PIL.Image: Importing MicImagePlugin
+2024-10-03 15:25:42,221 [DEBUG] PIL.Image: Image: failed to import MicImagePlugin: No module named 'olefile'
+2024-10-03 15:25:42,221 [DEBUG] PIL.Image: Importing MpegImagePlugin
+2024-10-03 15:25:42,221 [DEBUG] PIL.Image: Importing MpoImagePlugin
+2024-10-03 15:25:42,223 [DEBUG] PIL.Image: Importing MspImagePlugin
+2024-10-03 15:25:42,223 [DEBUG] PIL.Image: Importing PalmImagePlugin
+2024-10-03 15:25:42,224 [DEBUG] PIL.Image: Importing PcdImagePlugin
+2024-10-03 15:25:42,224 [DEBUG] PIL.Image: Importing PcxImagePlugin
+2024-10-03 15:25:42,224 [DEBUG] PIL.Image: Importing PdfImagePlugin
+2024-10-03 15:25:42,228 [DEBUG] PIL.Image: Importing PixarImagePlugin
+2024-10-03 15:25:42,228 [DEBUG] PIL.Image: Importing PngImagePlugin
+2024-10-03 15:25:42,228 [DEBUG] PIL.Image: Importing PpmImagePlugin
+2024-10-03 15:25:42,228 [DEBUG] PIL.Image: Importing PsdImagePlugin
+2024-10-03 15:25:42,228 [DEBUG] PIL.Image: Importing QoiImagePlugin
+2024-10-03 15:25:42,228 [DEBUG] PIL.Image: Importing SgiImagePlugin
+2024-10-03 15:25:42,228 [DEBUG] PIL.Image: Importing SpiderImagePlugin
+2024-10-03 15:25:42,229 [DEBUG] PIL.Image: Importing SunImagePlugin
+2024-10-03 15:25:42,229 [DEBUG] PIL.Image: Importing TgaImagePlugin
+2024-10-03 15:25:42,229 [DEBUG] PIL.Image: Importing TiffImagePlugin
+2024-10-03 15:25:42,229 [DEBUG] PIL.Image: Importing WebPImagePlugin
+2024-10-03 15:25:42,233 [DEBUG] PIL.Image: Importing WmfImagePlugin
+2024-10-03 15:25:42,233 [DEBUG] PIL.Image: Importing XbmImagePlugin
+2024-10-03 15:25:42,233 [DEBUG] PIL.Image: Importing XpmImagePlugin
+2024-10-03 15:25:42,234 [DEBUG] PIL.Image: Importing XVThumbImagePlugin
+2024-10-03 15:25:42,235 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 165116 13
+2024-10-03 15:25:42,235 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 165141 65536
+2024-10-03 15:25:42,279 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-03 15:25:42,279 [DEBUG] PIL.PngImagePlugin: STREAM b'sBIT' 41 4
+2024-10-03 15:25:42,279 [DEBUG] PIL.PngImagePlugin: b'sBIT' 41 4 (unknown)
+2024-10-03 15:25:42,279 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 57 9
+2024-10-03 15:25:42,279 [DEBUG] PIL.PngImagePlugin: STREAM b'tEXt' 78 25
+2024-10-03 15:25:42,279 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 115 8192
+2024-10-03 15:25:42,287 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-03 15:25:42,287 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 41 9
+2024-10-03 15:25:42,287 [DEBUG] PIL.PngImagePlugin: STREAM b'tEXt' 62 25
+2024-10-03 15:25:42,287 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 99 8192
+2024-10-03 15:25:42,292 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-03 15:25:42,292 [DEBUG] PIL.PngImagePlugin: STREAM b'sBIT' 41 4
+2024-10-03 15:25:42,292 [DEBUG] PIL.PngImagePlugin: b'sBIT' 41 4 (unknown)
+2024-10-03 15:25:42,292 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 57 9
+2024-10-03 15:25:42,292 [DEBUG] PIL.PngImagePlugin: STREAM b'tEXt' 78 25
+2024-10-03 15:25:42,292 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 115 8192
+2024-10-03 15:25:42,296 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-03 15:25:42,296 [DEBUG] PIL.PngImagePlugin: STREAM b'sBIT' 41 4
+2024-10-03 15:25:42,296 [DEBUG] PIL.PngImagePlugin: b'sBIT' 41 4 (unknown)
+2024-10-03 15:25:42,296 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 57 9
+2024-10-03 15:25:42,296 [DEBUG] PIL.PngImagePlugin: STREAM b'tEXt' 78 25
+2024-10-03 15:25:42,297 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 115 8192
+2024-10-04 11:34:45,620 [INFO] __main__: Запуск приложения
+2024-10-04 11:34:45,964 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-04 11:34:45,964 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 41 9
+2024-10-04 11:34:45,964 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 62 143839
+2024-10-04 11:34:45,989 [DEBUG] PIL.Image: Importing BlpImagePlugin
+2024-10-04 11:34:45,990 [DEBUG] PIL.Image: Importing BmpImagePlugin
+2024-10-04 11:34:45,990 [DEBUG] PIL.Image: Importing BufrStubImagePlugin
+2024-10-04 11:34:45,990 [DEBUG] PIL.Image: Importing CurImagePlugin
+2024-10-04 11:34:45,990 [DEBUG] PIL.Image: Importing DcxImagePlugin
+2024-10-04 11:34:45,991 [DEBUG] PIL.Image: Importing DdsImagePlugin
+2024-10-04 11:34:45,993 [DEBUG] PIL.Image: Importing EpsImagePlugin
+2024-10-04 11:34:45,993 [DEBUG] PIL.Image: Importing FitsImagePlugin
+2024-10-04 11:34:45,994 [DEBUG] PIL.Image: Importing FliImagePlugin
+2024-10-04 11:34:45,994 [DEBUG] PIL.Image: Importing FpxImagePlugin
+2024-10-04 11:34:45,995 [DEBUG] PIL.Image: Image: failed to import FpxImagePlugin: No module named 'olefile'
+2024-10-04 11:34:45,995 [DEBUG] PIL.Image: Importing FtexImagePlugin
+2024-10-04 11:34:45,995 [DEBUG] PIL.Image: Importing GbrImagePlugin
+2024-10-04 11:34:45,995 [DEBUG] PIL.Image: Importing GifImagePlugin
+2024-10-04 11:34:45,995 [DEBUG] PIL.Image: Importing GribStubImagePlugin
+2024-10-04 11:34:45,995 [DEBUG] PIL.Image: Importing Hdf5StubImagePlugin
+2024-10-04 11:34:45,996 [DEBUG] PIL.Image: Importing IcnsImagePlugin
+2024-10-04 11:34:45,997 [DEBUG] PIL.Image: Importing IcoImagePlugin
+2024-10-04 11:34:45,997 [DEBUG] PIL.Image: Importing ImImagePlugin
+2024-10-04 11:34:45,997 [DEBUG] PIL.Image: Importing ImtImagePlugin
+2024-10-04 11:34:45,998 [DEBUG] PIL.Image: Importing IptcImagePlugin
+2024-10-04 11:34:45,998 [DEBUG] PIL.Image: Importing JpegImagePlugin
+2024-10-04 11:34:45,998 [DEBUG] PIL.Image: Importing Jpeg2KImagePlugin
+2024-10-04 11:34:45,998 [DEBUG] PIL.Image: Importing McIdasImagePlugin
+2024-10-04 11:34:45,998 [DEBUG] PIL.Image: Importing MicImagePlugin
+2024-10-04 11:34:45,998 [DEBUG] PIL.Image: Image: failed to import MicImagePlugin: No module named 'olefile'
+2024-10-04 11:34:45,998 [DEBUG] PIL.Image: Importing MpegImagePlugin
+2024-10-04 11:34:45,998 [DEBUG] PIL.Image: Importing MpoImagePlugin
+2024-10-04 11:34:46,000 [DEBUG] PIL.Image: Importing MspImagePlugin
+2024-10-04 11:34:46,001 [DEBUG] PIL.Image: Importing PalmImagePlugin
+2024-10-04 11:34:46,001 [DEBUG] PIL.Image: Importing PcdImagePlugin
+2024-10-04 11:34:46,002 [DEBUG] PIL.Image: Importing PcxImagePlugin
+2024-10-04 11:34:46,002 [DEBUG] PIL.Image: Importing PdfImagePlugin
+2024-10-04 11:34:46,024 [DEBUG] PIL.Image: Importing PixarImagePlugin
+2024-10-04 11:34:46,025 [DEBUG] PIL.Image: Importing PngImagePlugin
+2024-10-04 11:34:46,025 [DEBUG] PIL.Image: Importing PpmImagePlugin
+2024-10-04 11:34:46,025 [DEBUG] PIL.Image: Importing PsdImagePlugin
+2024-10-04 11:34:46,025 [DEBUG] PIL.Image: Importing QoiImagePlugin
+2024-10-04 11:34:46,025 [DEBUG] PIL.Image: Importing SgiImagePlugin
+2024-10-04 11:34:46,025 [DEBUG] PIL.Image: Importing SpiderImagePlugin
+2024-10-04 11:34:46,026 [DEBUG] PIL.Image: Importing SunImagePlugin
+2024-10-04 11:34:46,026 [DEBUG] PIL.Image: Importing TgaImagePlugin
+2024-10-04 11:34:46,026 [DEBUG] PIL.Image: Importing TiffImagePlugin
+2024-10-04 11:34:46,026 [DEBUG] PIL.Image: Importing WebPImagePlugin
+2024-10-04 11:34:46,079 [DEBUG] PIL.Image: Importing WmfImagePlugin
+2024-10-04 11:34:46,080 [DEBUG] PIL.Image: Importing XbmImagePlugin
+2024-10-04 11:34:46,080 [DEBUG] PIL.Image: Importing XpmImagePlugin
+2024-10-04 11:34:46,081 [DEBUG] PIL.Image: Importing XVThumbImagePlugin
+2024-10-04 11:34:46,082 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 165116 13
+2024-10-04 11:34:46,082 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 165141 65536
+2024-10-04 11:34:46,125 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-04 11:34:46,126 [DEBUG] PIL.PngImagePlugin: STREAM b'sBIT' 41 4
+2024-10-04 11:34:46,126 [DEBUG] PIL.PngImagePlugin: b'sBIT' 41 4 (unknown)
+2024-10-04 11:34:46,126 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 57 9
+2024-10-04 11:34:46,126 [DEBUG] PIL.PngImagePlugin: STREAM b'tEXt' 78 25
+2024-10-04 11:34:46,126 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 115 8192
+2024-10-04 11:34:46,134 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-04 11:34:46,134 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 41 9
+2024-10-04 11:34:46,134 [DEBUG] PIL.PngImagePlugin: STREAM b'tEXt' 62 25
+2024-10-04 11:34:46,134 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 99 8192
+2024-10-04 11:34:46,139 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-04 11:34:46,139 [DEBUG] PIL.PngImagePlugin: STREAM b'sBIT' 41 4
+2024-10-04 11:34:46,139 [DEBUG] PIL.PngImagePlugin: b'sBIT' 41 4 (unknown)
+2024-10-04 11:34:46,139 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 57 9
+2024-10-04 11:34:46,139 [DEBUG] PIL.PngImagePlugin: STREAM b'tEXt' 78 25
+2024-10-04 11:34:46,139 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 115 8192
+2024-10-04 11:34:46,144 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-04 11:34:46,144 [DEBUG] PIL.PngImagePlugin: STREAM b'sBIT' 41 4
+2024-10-04 11:34:46,144 [DEBUG] PIL.PngImagePlugin: b'sBIT' 41 4 (unknown)
+2024-10-04 11:34:46,144 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 57 9
+2024-10-04 11:34:46,144 [DEBUG] PIL.PngImagePlugin: STREAM b'tEXt' 78 25
+2024-10-04 11:34:46,144 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 115 8192
+2024-10-04 11:34:57,651 [INFO] gui: Начало расчета
+2024-10-04 11:34:57,654 [INFO] gui: Расчет успешно завершен
+2024-10-04 11:35:07,418 [INFO] gui: Начало генерации PDF по пути: /var/folders/7m/7s9l3kgd3jjdnhm3rys7l72c0000gn/T/6vfq4fop.pdf
+2024-10-04 11:35:07,419 [DEBUG] gui: Загрузка шаблона Excel
+2024-10-04 11:38:12,918 [INFO] gui: Начало генерации PDF по пути: /var/folders/7m/7s9l3kgd3jjdnhm3rys7l72c0000gn/T/2xm8jaok.pdf
+2024-10-04 11:38:12,921 [DEBUG] gui: Загрузка шаблона Excel
+2024-10-04 11:40:12,517 [INFO] gui: Начало генерации PDF по пути: /var/folders/7m/7s9l3kgd3jjdnhm3rys7l72c0000gn/T/hrcjrncn.pdf
+2024-10-04 11:40:12,519 [DEBUG] gui: Загрузка шаблона Excel
+2024-10-04 11:51:09,837 [INFO] __main__: Запуск приложения
+2024-10-04 11:51:10,174 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-04 11:51:10,174 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 41 9
+2024-10-04 11:51:10,174 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 62 143839
+2024-10-04 11:51:10,198 [DEBUG] PIL.Image: Importing BlpImagePlugin
+2024-10-04 11:51:10,198 [DEBUG] PIL.Image: Importing BmpImagePlugin
+2024-10-04 11:51:10,198 [DEBUG] PIL.Image: Importing BufrStubImagePlugin
+2024-10-04 11:51:10,199 [DEBUG] PIL.Image: Importing CurImagePlugin
+2024-10-04 11:51:10,199 [DEBUG] PIL.Image: Importing DcxImagePlugin
+2024-10-04 11:51:10,199 [DEBUG] PIL.Image: Importing DdsImagePlugin
+2024-10-04 11:51:10,201 [DEBUG] PIL.Image: Importing EpsImagePlugin
+2024-10-04 11:51:10,202 [DEBUG] PIL.Image: Importing FitsImagePlugin
+2024-10-04 11:51:10,202 [DEBUG] PIL.Image: Importing FliImagePlugin
+2024-10-04 11:51:10,203 [DEBUG] PIL.Image: Importing FpxImagePlugin
+2024-10-04 11:51:10,203 [DEBUG] PIL.Image: Image: failed to import FpxImagePlugin: No module named 'olefile'
+2024-10-04 11:51:10,203 [DEBUG] PIL.Image: Importing FtexImagePlugin
+2024-10-04 11:51:10,203 [DEBUG] PIL.Image: Importing GbrImagePlugin
+2024-10-04 11:51:10,203 [DEBUG] PIL.Image: Importing GifImagePlugin
+2024-10-04 11:51:10,203 [DEBUG] PIL.Image: Importing GribStubImagePlugin
+2024-10-04 11:51:10,203 [DEBUG] PIL.Image: Importing Hdf5StubImagePlugin
+2024-10-04 11:51:10,204 [DEBUG] PIL.Image: Importing IcnsImagePlugin
+2024-10-04 11:51:10,205 [DEBUG] PIL.Image: Importing IcoImagePlugin
+2024-10-04 11:51:10,205 [DEBUG] PIL.Image: Importing ImImagePlugin
+2024-10-04 11:51:10,205 [DEBUG] PIL.Image: Importing ImtImagePlugin
+2024-10-04 11:51:10,206 [DEBUG] PIL.Image: Importing IptcImagePlugin
+2024-10-04 11:51:10,206 [DEBUG] PIL.Image: Importing JpegImagePlugin
+2024-10-04 11:51:10,206 [DEBUG] PIL.Image: Importing Jpeg2KImagePlugin
+2024-10-04 11:51:10,206 [DEBUG] PIL.Image: Importing McIdasImagePlugin
+2024-10-04 11:51:10,206 [DEBUG] PIL.Image: Importing MicImagePlugin
+2024-10-04 11:51:10,206 [DEBUG] PIL.Image: Image: failed to import MicImagePlugin: No module named 'olefile'
+2024-10-04 11:51:10,206 [DEBUG] PIL.Image: Importing MpegImagePlugin
+2024-10-04 11:51:10,207 [DEBUG] PIL.Image: Importing MpoImagePlugin
+2024-10-04 11:51:10,208 [DEBUG] PIL.Image: Importing MspImagePlugin
+2024-10-04 11:51:10,209 [DEBUG] PIL.Image: Importing PalmImagePlugin
+2024-10-04 11:51:10,209 [DEBUG] PIL.Image: Importing PcdImagePlugin
+2024-10-04 11:51:10,209 [DEBUG] PIL.Image: Importing PcxImagePlugin
+2024-10-04 11:51:10,210 [DEBUG] PIL.Image: Importing PdfImagePlugin
+2024-10-04 11:51:10,213 [DEBUG] PIL.Image: Importing PixarImagePlugin
+2024-10-04 11:51:10,213 [DEBUG] PIL.Image: Importing PngImagePlugin
+2024-10-04 11:51:10,213 [DEBUG] PIL.Image: Importing PpmImagePlugin
+2024-10-04 11:51:10,213 [DEBUG] PIL.Image: Importing PsdImagePlugin
+2024-10-04 11:51:10,214 [DEBUG] PIL.Image: Importing QoiImagePlugin
+2024-10-04 11:51:10,214 [DEBUG] PIL.Image: Importing SgiImagePlugin
+2024-10-04 11:51:10,214 [DEBUG] PIL.Image: Importing SpiderImagePlugin
+2024-10-04 11:51:10,214 [DEBUG] PIL.Image: Importing SunImagePlugin
+2024-10-04 11:51:10,215 [DEBUG] PIL.Image: Importing TgaImagePlugin
+2024-10-04 11:51:10,215 [DEBUG] PIL.Image: Importing TiffImagePlugin
+2024-10-04 11:51:10,215 [DEBUG] PIL.Image: Importing WebPImagePlugin
+2024-10-04 11:51:10,219 [DEBUG] PIL.Image: Importing WmfImagePlugin
+2024-10-04 11:51:10,219 [DEBUG] PIL.Image: Importing XbmImagePlugin
+2024-10-04 11:51:10,219 [DEBUG] PIL.Image: Importing XpmImagePlugin
+2024-10-04 11:51:10,220 [DEBUG] PIL.Image: Importing XVThumbImagePlugin
+2024-10-04 11:51:10,221 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 165116 13
+2024-10-04 11:51:10,221 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 165141 65536
+2024-10-04 11:51:10,264 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-04 11:51:10,264 [DEBUG] PIL.PngImagePlugin: STREAM b'sBIT' 41 4
+2024-10-04 11:51:10,264 [DEBUG] PIL.PngImagePlugin: b'sBIT' 41 4 (unknown)
+2024-10-04 11:51:10,264 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 57 9
+2024-10-04 11:51:10,264 [DEBUG] PIL.PngImagePlugin: STREAM b'tEXt' 78 25
+2024-10-04 11:51:10,264 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 115 8192
+2024-10-04 11:51:10,272 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-04 11:51:10,272 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 41 9
+2024-10-04 11:51:10,272 [DEBUG] PIL.PngImagePlugin: STREAM b'tEXt' 62 25
+2024-10-04 11:51:10,272 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 99 8192
+2024-10-04 11:51:10,276 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-04 11:51:10,276 [DEBUG] PIL.PngImagePlugin: STREAM b'sBIT' 41 4
+2024-10-04 11:51:10,276 [DEBUG] PIL.PngImagePlugin: b'sBIT' 41 4 (unknown)
+2024-10-04 11:51:10,276 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 57 9
+2024-10-04 11:51:10,276 [DEBUG] PIL.PngImagePlugin: STREAM b'tEXt' 78 25
+2024-10-04 11:51:10,276 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 115 8192
+2024-10-04 11:51:10,281 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-04 11:51:10,281 [DEBUG] PIL.PngImagePlugin: STREAM b'sBIT' 41 4
+2024-10-04 11:51:10,281 [DEBUG] PIL.PngImagePlugin: b'sBIT' 41 4 (unknown)
+2024-10-04 11:51:10,281 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 57 9
+2024-10-04 11:51:10,281 [DEBUG] PIL.PngImagePlugin: STREAM b'tEXt' 78 25
+2024-10-04 11:51:10,281 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 115 8192
+2024-10-04 11:51:39,192 [INFO] gui: Начало расчета
+2024-10-04 11:51:39,195 [INFO] gui: Расчет успешно завершен
+2024-10-04 11:51:51,885 [INFO] gui: Начало генерации PDF по пути: /var/folders/7m/7s9l3kgd3jjdnhm3rys7l72c0000gn/T/tr2s1idw.pdf
+2024-10-04 11:51:51,886 [DEBUG] gui: Загрузка шаблона Excel
+2024-10-04 11:54:02,181 [INFO] gui: Начало расчета
+2024-10-04 11:54:02,190 [INFO] gui: Расчет успешно завершен
+2024-10-04 11:54:05,361 [INFO] gui: Начало генерации PDF по пути: /var/folders/7m/7s9l3kgd3jjdnhm3rys7l72c0000gn/T/svd7mfjt.pdf
+2024-10-04 11:54:05,361 [DEBUG] gui: Загрузка шаблона Excel
+2024-10-04 11:56:43,690 [INFO] gui: Начало генерации PDF по пути: /var/folders/7m/7s9l3kgd3jjdnhm3rys7l72c0000gn/T/s186htmv.pdf
+2024-10-04 11:56:43,691 [DEBUG] gui: Загрузка шаблона Excel
+2024-10-04 12:24:01,088 [INFO] gui: Начало генерации PDF по пути: /var/folders/7m/7s9l3kgd3jjdnhm3rys7l72c0000gn/T/8gntgzw7.pdf
+2024-10-04 12:24:01,089 [DEBUG] gui: Загрузка шаблона Excel
+2024-10-04 12:24:34,785 [INFO] gui: Начало генерации PDF по пути: /var/folders/7m/7s9l3kgd3jjdnhm3rys7l72c0000gn/T/gii4li1b.pdf
+2024-10-04 12:24:34,786 [DEBUG] gui: Загрузка шаблона Excel
+2024-10-04 12:43:44,551 [INFO] gui: Начало генерации PDF по пути: /var/folders/7m/7s9l3kgd3jjdnhm3rys7l72c0000gn/T/o05et6m2.pdf
+2024-10-04 12:43:44,555 [DEBUG] gui: Загрузка шаблона Excel
+2024-10-04 13:23:28,946 [INFO] __main__: Запуск приложения
+2024-10-04 13:23:29,309 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-04 13:23:29,309 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 41 9
+2024-10-04 13:23:29,309 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 62 143839
+2024-10-04 13:23:29,330 [DEBUG] PIL.Image: Importing BlpImagePlugin
+2024-10-04 13:23:29,331 [DEBUG] PIL.Image: Importing BmpImagePlugin
+2024-10-04 13:23:29,331 [DEBUG] PIL.Image: Importing BufrStubImagePlugin
+2024-10-04 13:23:29,331 [DEBUG] PIL.Image: Importing CurImagePlugin
+2024-10-04 13:23:29,332 [DEBUG] PIL.Image: Importing DcxImagePlugin
+2024-10-04 13:23:29,332 [DEBUG] PIL.Image: Importing DdsImagePlugin
+2024-10-04 13:23:29,334 [DEBUG] PIL.Image: Importing EpsImagePlugin
+2024-10-04 13:23:29,335 [DEBUG] PIL.Image: Importing FitsImagePlugin
+2024-10-04 13:23:29,336 [DEBUG] PIL.Image: Importing FliImagePlugin
+2024-10-04 13:23:29,336 [DEBUG] PIL.Image: Importing FpxImagePlugin
+2024-10-04 13:23:29,336 [DEBUG] PIL.Image: Image: failed to import FpxImagePlugin: No module named 'olefile'
+2024-10-04 13:23:29,336 [DEBUG] PIL.Image: Importing FtexImagePlugin
+2024-10-04 13:23:29,337 [DEBUG] PIL.Image: Importing GbrImagePlugin
+2024-10-04 13:23:29,337 [DEBUG] PIL.Image: Importing GifImagePlugin
+2024-10-04 13:23:29,337 [DEBUG] PIL.Image: Importing GribStubImagePlugin
+2024-10-04 13:23:29,337 [DEBUG] PIL.Image: Importing Hdf5StubImagePlugin
+2024-10-04 13:23:29,337 [DEBUG] PIL.Image: Importing IcnsImagePlugin
+2024-10-04 13:23:29,338 [DEBUG] PIL.Image: Importing IcoImagePlugin
+2024-10-04 13:23:29,339 [DEBUG] PIL.Image: Importing ImImagePlugin
+2024-10-04 13:23:29,339 [DEBUG] PIL.Image: Importing ImtImagePlugin
+2024-10-04 13:23:29,339 [DEBUG] PIL.Image: Importing IptcImagePlugin
+2024-10-04 13:23:29,340 [DEBUG] PIL.Image: Importing JpegImagePlugin
+2024-10-04 13:23:29,340 [DEBUG] PIL.Image: Importing Jpeg2KImagePlugin
+2024-10-04 13:23:29,340 [DEBUG] PIL.Image: Importing McIdasImagePlugin
+2024-10-04 13:23:29,340 [DEBUG] PIL.Image: Importing MicImagePlugin
+2024-10-04 13:23:29,340 [DEBUG] PIL.Image: Image: failed to import MicImagePlugin: No module named 'olefile'
+2024-10-04 13:23:29,340 [DEBUG] PIL.Image: Importing MpegImagePlugin
+2024-10-04 13:23:29,340 [DEBUG] PIL.Image: Importing MpoImagePlugin
+2024-10-04 13:23:29,342 [DEBUG] PIL.Image: Importing MspImagePlugin
+2024-10-04 13:23:29,343 [DEBUG] PIL.Image: Importing PalmImagePlugin
+2024-10-04 13:23:29,343 [DEBUG] PIL.Image: Importing PcdImagePlugin
+2024-10-04 13:23:29,343 [DEBUG] PIL.Image: Importing PcxImagePlugin
+2024-10-04 13:23:29,344 [DEBUG] PIL.Image: Importing PdfImagePlugin
+2024-10-04 13:23:29,347 [DEBUG] PIL.Image: Importing PixarImagePlugin
+2024-10-04 13:23:29,348 [DEBUG] PIL.Image: Importing PngImagePlugin
+2024-10-04 13:23:29,348 [DEBUG] PIL.Image: Importing PpmImagePlugin
+2024-10-04 13:23:29,348 [DEBUG] PIL.Image: Importing PsdImagePlugin
+2024-10-04 13:23:29,348 [DEBUG] PIL.Image: Importing QoiImagePlugin
+2024-10-04 13:23:29,348 [DEBUG] PIL.Image: Importing SgiImagePlugin
+2024-10-04 13:23:29,349 [DEBUG] PIL.Image: Importing SpiderImagePlugin
+2024-10-04 13:23:29,349 [DEBUG] PIL.Image: Importing SunImagePlugin
+2024-10-04 13:23:29,349 [DEBUG] PIL.Image: Importing TgaImagePlugin
+2024-10-04 13:23:29,349 [DEBUG] PIL.Image: Importing TiffImagePlugin
+2024-10-04 13:23:29,349 [DEBUG] PIL.Image: Importing WebPImagePlugin
+2024-10-04 13:23:29,353 [DEBUG] PIL.Image: Importing WmfImagePlugin
+2024-10-04 13:23:29,353 [DEBUG] PIL.Image: Importing XbmImagePlugin
+2024-10-04 13:23:29,354 [DEBUG] PIL.Image: Importing XpmImagePlugin
+2024-10-04 13:23:29,354 [DEBUG] PIL.Image: Importing XVThumbImagePlugin
+2024-10-04 13:23:29,356 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 165116 13
+2024-10-04 13:23:29,356 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 165141 65536
+2024-10-04 13:23:29,399 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-04 13:23:29,399 [DEBUG] PIL.PngImagePlugin: STREAM b'sBIT' 41 4
+2024-10-04 13:23:29,399 [DEBUG] PIL.PngImagePlugin: b'sBIT' 41 4 (unknown)
+2024-10-04 13:23:29,399 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 57 9
+2024-10-04 13:23:29,399 [DEBUG] PIL.PngImagePlugin: STREAM b'tEXt' 78 25
+2024-10-04 13:23:29,399 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 115 8192
+2024-10-04 13:23:29,407 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-04 13:23:29,407 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 41 9
+2024-10-04 13:23:29,407 [DEBUG] PIL.PngImagePlugin: STREAM b'tEXt' 62 25
+2024-10-04 13:23:29,408 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 99 8192
+2024-10-04 13:23:29,412 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-04 13:23:29,412 [DEBUG] PIL.PngImagePlugin: STREAM b'sBIT' 41 4
+2024-10-04 13:23:29,412 [DEBUG] PIL.PngImagePlugin: b'sBIT' 41 4 (unknown)
+2024-10-04 13:23:29,412 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 57 9
+2024-10-04 13:23:29,412 [DEBUG] PIL.PngImagePlugin: STREAM b'tEXt' 78 25
+2024-10-04 13:23:29,412 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 115 8192
+2024-10-04 13:23:29,416 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-04 13:23:29,417 [DEBUG] PIL.PngImagePlugin: STREAM b'sBIT' 41 4
+2024-10-04 13:23:29,417 [DEBUG] PIL.PngImagePlugin: b'sBIT' 41 4 (unknown)
+2024-10-04 13:23:29,417 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 57 9
+2024-10-04 13:23:29,417 [DEBUG] PIL.PngImagePlugin: STREAM b'tEXt' 78 25
+2024-10-04 13:23:29,417 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 115 8192
+2024-10-04 13:23:43,348 [INFO] gui: Начало расчета
+2024-10-04 13:23:43,351 [INFO] gui: Расчет успешно завершен
+2024-10-04 13:23:58,599 [INFO] gui: Начало генерации PDF по пути: /var/folders/7m/7s9l3kgd3jjdnhm3rys7l72c0000gn/T/l6y_0u16.pdf
+2024-10-04 13:23:58,600 [DEBUG] gui: Загрузка шаблона Excel
+2024-10-04 13:25:49,848 [INFO] __main__: Запуск приложения
+2024-10-04 13:25:50,214 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-04 13:25:50,215 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 41 9
+2024-10-04 13:25:50,215 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 62 143839
+2024-10-04 13:25:50,236 [DEBUG] PIL.Image: Importing BlpImagePlugin
+2024-10-04 13:25:50,237 [DEBUG] PIL.Image: Importing BmpImagePlugin
+2024-10-04 13:25:50,237 [DEBUG] PIL.Image: Importing BufrStubImagePlugin
+2024-10-04 13:25:50,238 [DEBUG] PIL.Image: Importing CurImagePlugin
+2024-10-04 13:25:50,238 [DEBUG] PIL.Image: Importing DcxImagePlugin
+2024-10-04 13:25:50,238 [DEBUG] PIL.Image: Importing DdsImagePlugin
+2024-10-04 13:25:50,240 [DEBUG] PIL.Image: Importing EpsImagePlugin
+2024-10-04 13:25:50,240 [DEBUG] PIL.Image: Importing FitsImagePlugin
+2024-10-04 13:25:50,241 [DEBUG] PIL.Image: Importing FliImagePlugin
+2024-10-04 13:25:50,241 [DEBUG] PIL.Image: Importing FpxImagePlugin
+2024-10-04 13:25:50,242 [DEBUG] PIL.Image: Image: failed to import FpxImagePlugin: No module named 'olefile'
+2024-10-04 13:25:50,242 [DEBUG] PIL.Image: Importing FtexImagePlugin
+2024-10-04 13:25:50,242 [DEBUG] PIL.Image: Importing GbrImagePlugin
+2024-10-04 13:25:50,242 [DEBUG] PIL.Image: Importing GifImagePlugin
+2024-10-04 13:25:50,242 [DEBUG] PIL.Image: Importing GribStubImagePlugin
+2024-10-04 13:25:50,242 [DEBUG] PIL.Image: Importing Hdf5StubImagePlugin
+2024-10-04 13:25:50,243 [DEBUG] PIL.Image: Importing IcnsImagePlugin
+2024-10-04 13:25:50,244 [DEBUG] PIL.Image: Importing IcoImagePlugin
+2024-10-04 13:25:50,244 [DEBUG] PIL.Image: Importing ImImagePlugin
+2024-10-04 13:25:50,244 [DEBUG] PIL.Image: Importing ImtImagePlugin
+2024-10-04 13:25:50,244 [DEBUG] PIL.Image: Importing IptcImagePlugin
+2024-10-04 13:25:50,245 [DEBUG] PIL.Image: Importing JpegImagePlugin
+2024-10-04 13:25:50,245 [DEBUG] PIL.Image: Importing Jpeg2KImagePlugin
+2024-10-04 13:25:50,245 [DEBUG] PIL.Image: Importing McIdasImagePlugin
+2024-10-04 13:25:50,245 [DEBUG] PIL.Image: Importing MicImagePlugin
+2024-10-04 13:25:50,245 [DEBUG] PIL.Image: Image: failed to import MicImagePlugin: No module named 'olefile'
+2024-10-04 13:25:50,245 [DEBUG] PIL.Image: Importing MpegImagePlugin
+2024-10-04 13:25:50,245 [DEBUG] PIL.Image: Importing MpoImagePlugin
+2024-10-04 13:25:50,247 [DEBUG] PIL.Image: Importing MspImagePlugin
+2024-10-04 13:25:50,248 [DEBUG] PIL.Image: Importing PalmImagePlugin
+2024-10-04 13:25:50,248 [DEBUG] PIL.Image: Importing PcdImagePlugin
+2024-10-04 13:25:50,248 [DEBUG] PIL.Image: Importing PcxImagePlugin
+2024-10-04 13:25:50,248 [DEBUG] PIL.Image: Importing PdfImagePlugin
+2024-10-04 13:25:50,252 [DEBUG] PIL.Image: Importing PixarImagePlugin
+2024-10-04 13:25:50,253 [DEBUG] PIL.Image: Importing PngImagePlugin
+2024-10-04 13:25:50,253 [DEBUG] PIL.Image: Importing PpmImagePlugin
+2024-10-04 13:25:50,253 [DEBUG] PIL.Image: Importing PsdImagePlugin
+2024-10-04 13:25:50,253 [DEBUG] PIL.Image: Importing QoiImagePlugin
+2024-10-04 13:25:50,253 [DEBUG] PIL.Image: Importing SgiImagePlugin
+2024-10-04 13:25:50,253 [DEBUG] PIL.Image: Importing SpiderImagePlugin
+2024-10-04 13:25:50,254 [DEBUG] PIL.Image: Importing SunImagePlugin
+2024-10-04 13:25:50,254 [DEBUG] PIL.Image: Importing TgaImagePlugin
+2024-10-04 13:25:50,254 [DEBUG] PIL.Image: Importing TiffImagePlugin
+2024-10-04 13:25:50,254 [DEBUG] PIL.Image: Importing WebPImagePlugin
+2024-10-04 13:25:50,259 [DEBUG] PIL.Image: Importing WmfImagePlugin
+2024-10-04 13:25:50,259 [DEBUG] PIL.Image: Importing XbmImagePlugin
+2024-10-04 13:25:50,260 [DEBUG] PIL.Image: Importing XpmImagePlugin
+2024-10-04 13:25:50,260 [DEBUG] PIL.Image: Importing XVThumbImagePlugin
+2024-10-04 13:25:50,261 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 165116 13
+2024-10-04 13:25:50,261 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 165141 65536
+2024-10-04 13:25:50,307 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-04 13:25:50,307 [DEBUG] PIL.PngImagePlugin: STREAM b'sBIT' 41 4
+2024-10-04 13:25:50,307 [DEBUG] PIL.PngImagePlugin: b'sBIT' 41 4 (unknown)
+2024-10-04 13:25:50,307 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 57 9
+2024-10-04 13:25:50,307 [DEBUG] PIL.PngImagePlugin: STREAM b'tEXt' 78 25
+2024-10-04 13:25:50,307 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 115 8192
+2024-10-04 13:25:50,315 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-04 13:25:50,315 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 41 9
+2024-10-04 13:25:50,315 [DEBUG] PIL.PngImagePlugin: STREAM b'tEXt' 62 25
+2024-10-04 13:25:50,315 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 99 8192
+2024-10-04 13:25:50,319 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-04 13:25:50,320 [DEBUG] PIL.PngImagePlugin: STREAM b'sBIT' 41 4
+2024-10-04 13:25:50,320 [DEBUG] PIL.PngImagePlugin: b'sBIT' 41 4 (unknown)
+2024-10-04 13:25:50,320 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 57 9
+2024-10-04 13:25:50,320 [DEBUG] PIL.PngImagePlugin: STREAM b'tEXt' 78 25
+2024-10-04 13:25:50,320 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 115 8192
+2024-10-04 13:25:50,324 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-04 13:25:50,324 [DEBUG] PIL.PngImagePlugin: STREAM b'sBIT' 41 4
+2024-10-04 13:25:50,324 [DEBUG] PIL.PngImagePlugin: b'sBIT' 41 4 (unknown)
+2024-10-04 13:25:50,324 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 57 9
+2024-10-04 13:25:50,324 [DEBUG] PIL.PngImagePlugin: STREAM b'tEXt' 78 25
+2024-10-04 13:25:50,324 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 115 8192
+2024-10-04 13:26:31,296 [INFO] gui: Начало расчета
+2024-10-04 13:26:31,298 [INFO] gui: Расчет успешно завершен
+2024-10-04 13:32:54,226 [INFO] gui: Начало генерации PDF по пути: /var/folders/7m/7s9l3kgd3jjdnhm3rys7l72c0000gn/T/irbsspdt.pdf
+2024-10-04 13:32:54,229 [DEBUG] gui: Загрузка шаблона Excel
+2024-10-04 13:35:51,501 [INFO] gui: Начало генерации PDF по пути: /var/folders/7m/7s9l3kgd3jjdnhm3rys7l72c0000gn/T/ioz2tyb9.pdf
+2024-10-04 13:35:51,504 [DEBUG] gui: Загрузка шаблона Excel
+2024-10-04 13:36:59,721 [INFO] gui: Начало генерации PDF по пути: /var/folders/7m/7s9l3kgd3jjdnhm3rys7l72c0000gn/T/8_fr3yme.pdf
+2024-10-04 13:36:59,724 [DEBUG] gui: Загрузка шаблона Excel
