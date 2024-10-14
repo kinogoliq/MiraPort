@@ -1,4 +1,5 @@
 # gui.py
+
 import sys
 import os
 import tempfile
@@ -6,85 +7,114 @@ import shutil
 import subprocess
 import logging
 import tkinter as tk
-from tkinter import messagebox, filedialog
+from tkinter import messagebox, filedialog, E, W, N, S
 
 import ttkbootstrap as ttk
 from ttkbootstrap.constants import *
-from ttkbootstrap import Style
 from PIL import Image, ImageTk
 import openpyxl
+from openpyxl.utils import get_column_letter
+from openpyxl.cell.cell import Cell, MergedCell
 
 from calculations import FeeCalculator
+from constants import (
+    START_ROW_FEES,
+    START_ROW_AGENCY_FEES,
+    LOGO_PATH,
+    TEMPLATE_PATH,
+    LOGO_PATH,
+    TEMPLATE_PATH
+)
 from utils import format_amount, parse_input, resource_path
-from constants import START_ROW_FEES, START_ROW_AGENCY_FEES, LOGO_PATH, TEMPLATE_PATH
 from agency_fee import calculate_cv, show_agency_fee_table, get_agency_fee
+from fda_tab import FDATab
 
 logger = logging.getLogger(__name__)
-
-# Проверяем, если приложение запущено на macOS
-# if sys.platform == 'darwin':
-#    from AppKit import NSImage, NSApplication
-
-# Импортируем необходимые модули из вашего проекта
-from calculations import FeeCalculator
-from constants import LOGO_PATH, TEMPLATE_PATH
-from utils import format_amount, parse_input
 
 
 class ScrollableFrame(ttk.Frame):
     def __init__(self, container, *args, **kwargs):
         super().__init__(container, *args, **kwargs)
 
-        # Создаем Canvas
-        canvas = ttk.Canvas(self)
-        scrollbar = ttk.Scrollbar(self, orient='vertical', command=canvas.yview)
-        self.scrollable_frame = ttk.Frame(canvas)
+        self.canvas = tk.Canvas(self)
+        scrollbar = ttk.Scrollbar(self, orient="vertical", command=self.canvas.yview)
+        self.scrollable_frame = ttk.Frame(self.canvas)
 
         self.scrollable_frame.bind(
             "<Configure>",
-            lambda e: canvas.configure(
-                scrollregion=canvas.bbox('all')
+            lambda e: self.canvas.configure(
+                scrollregion=self.canvas.bbox("all")
             )
         )
 
-        canvas.create_window((0, 0), window=self.scrollable_frame, anchor='nw')
-        canvas.configure(yscrollcommand=scrollbar.set)
+        self.canvas.create_window((0, 0), window=self.scrollable_frame, anchor="nw")
+        self.canvas.configure(yscrollcommand=scrollbar.set)
 
-        canvas.pack(side='left', fill='both', expand=True)
-        scrollbar.pack(side='right', fill='y')
+        self.canvas.pack(side="left", fill="both", expand=True)
+        scrollbar.pack(side="right", fill="y")
 
         # Обработка прокрутки колесиком мыши
-        self.scrollable_frame.bind("<Enter>", self._bind_to_mousewheel)
-        self.scrollable_frame.bind("<Leave>", self._unbind_from_mousewheel)
+        self.bind_mousewheel(self.scrollable_frame)
 
-    def _on_mousewheel(self, event):
-        if sys.platform == 'darwin':
-            self.scrollable_frame.yview_scroll(-1 * (event.delta), "units")
+    def bind_mousewheel(self, widget):
+        if sys.platform.startswith('win'):
+            widget.bind("<Enter>", self._bind_to_mousewheel_windows)
+            widget.bind("<Leave>", self._unbind_from_mousewheel_windows)
+        elif sys.platform.startswith('darwin'):
+            widget.bind("<Enter>", self._bind_to_mousewheel_mac)
+            widget.bind("<Leave>", self._unbind_from_mousewheel_mac)
         else:
-            self.scrollable_frame.yview_scroll(-1 * (event.delta // 120), "units")
+            widget.bind("<Enter>", self._bind_to_mousewheel_linux)
+            widget.bind("<Leave>", self._unbind_from_mousewheel_linux)
+        for child in widget.winfo_children():
+            self.bind_mousewheel(child)
 
-    def _bind_to_mousewheel(self, event):
-        self.bind_all("<MouseWheel>", self._on_mousewheel)
+    def _on_mousewheel_windows(self, event):
+        self.canvas.yview_scroll(int(-1 * (event.delta / 120)), "units")
 
-    def _unbind_from_mousewheel(self, event):
-        self.unbind_all("<MouseWheel>")
+    def _bind_to_mousewheel_windows(self, event):
+        self.canvas.bind_all("<MouseWheel>", self._on_mousewheel_windows)
+
+    def _unbind_from_mousewheel_windows(self, event):
+        self.canvas.unbind_all("<MouseWheel>")
+
+    def _on_mousewheel_mac(self, event):
+        self.canvas.yview_scroll(int(-1 * event.delta), "units")
+
+    def _bind_to_mousewheel_mac(self, event):
+        self.canvas.bind_all("<MouseWheel>", self._on_mousewheel_mac)
+
+    def _unbind_from_mousewheel_mac(self, event):
+        self.canvas.unbind_all("<MouseWheel>")
+
+    def _on_mousewheel_linux(self, event):
+        if event.num == 4:
+            self.canvas.yview_scroll(-1, "units")
+        elif event.num == 5:
+            self.canvas.yview_scroll(1, "units")
+
+    def _bind_to_mousewheel_linux(self, event):
+        self.canvas.bind_all("<Button-4>", self._on_mousewheel_linux)
+        self.canvas.bind_all("<Button-5>", self._on_mousewheel_linux)
+
+    def _unbind_from_mousewheel_linux(self, event):
+        self.canvas.unbind_all("<Button-4>")
+        self.canvas.unbind_all("<Button-5>")
 
 
 class ProformaApp:
     def __init__(self, root):
         self.root = root
         self.root.title("Расчет проформы дисбурсментского счета")
-
+        self.root.geometry("1100x1000")  # Устанавливаем размер окна 800x600 пикселей
         # Установка иконки приложения
         self.set_app_icon()
-
         # Создаем стиль с выбранной темой
-        self.style = Style(theme='cosmo')  # Вы можете выбрать другую тему
-
+        self.style = ttk.Style(theme='cosmo')  # Вы можете выбрать другую тему
+        self.pda_data = []  # Список fees и dues из PDA
         self.create_widgets()
         self.last_pdf_path = None  # Для хранения пути к последнему сгенерированному PDF
-        # Добавьте инициализацию cv
-        self.cv = 0
+        self.cv = 0  # Инициализируем cv
 
     def set_app_icon(self):
         if sys.platform.startswith('win'):
@@ -94,11 +124,7 @@ class ProformaApp:
             except Exception as e:
                 logger.exception("Ошибка при установке иконки приложения: %s", e)
         elif sys.platform.startswith('darwin'):
-            # Tkinter на macOS может не поддерживать .icns файлы напрямую
-            # Рекомендуется использовать упаковщики, такие как Platypus или py2app, для установки иконки
             try:
-                # Альтернативный метод установки иконки
-                # Можно использовать PhotoImage или другие способы
                 icon_path = resource_path(os.path.join('icons', 'app_icon.png'))
                 image = Image.open(icon_path)
                 photo = ImageTk.PhotoImage(image)
@@ -106,13 +132,13 @@ class ProformaApp:
             except Exception as e:
                 logger.exception("Ошибка при установке иконки приложения: %s", e)
         else:
-            # Для Linux и других платформ
             icon_path = resource_path(os.path.join('icons', 'app_icon.png'))
             try:
                 photo = ImageTk.PhotoImage(file=icon_path)
                 self.root.iconphoto(False, photo)
             except Exception as e:
                 logger.exception("Ошибка при установке иконки приложения: %s", e)
+        pass
 
     def create_widgets(self):
         # Создаем Notebook
@@ -122,17 +148,29 @@ class ProformaApp:
         # Фреймы для вкладок
         self.input_frame = ttk.Frame(notebook)
         self.result_frame = ttk.Frame(notebook)
+        self.fda_frame = ttk.Frame(notebook)  # Новая вкладка FDA
 
         notebook.add(self.input_frame, text='Ввод данных')
         notebook.add(self.result_frame, text='Результаты')
+        notebook.add(self.fda_frame, text='FDA')  # Добавляем вкладку FDA
 
         # Вызов методов для создания виджетов
         self.create_input_widgets()
         self.create_result_widgets()
 
+        # Создаем экземпляр вкладки FDA с пустыми данными
+        self.fda_tab = FDATab(self.fda_frame, self.pda_data)
+
     def create_input_widgets(self):
-        # Добавление логотипа
-        logo_frame = ttk.Frame(self.input_frame)
+        # Создаем прокручиваемый фрейм
+        scrollable_frame = ScrollableFrame(self.input_frame)
+        scrollable_frame.pack(fill="both", expand=True)
+
+        # Теперь используем scrollable_frame.scrollable_frame для размещения виджетов
+        container = scrollable_frame.scrollable_frame
+
+        # Добавление логотип
+        logo_frame = ttk.Frame(container)
         logo_frame.pack(pady=10)
 
         try:
@@ -146,8 +184,8 @@ class ProformaApp:
             print(f"Ошибка при загрузке логотипа: {e}")
             messagebox.showerror("Ошибка", f"Не удалось загрузить логотип: {e}")
 
-        # Создание фрейма для полей ввода
-        fields_frame = ttk.Frame(self.input_frame)
+        # Создание фрейма для полей ввода внутри прокручиваемого фрейма
+        fields_frame = ttk.Frame(container)
         fields_frame.pack(pady=10, fill='x')
 
         # Поля ввода
@@ -221,7 +259,7 @@ class ProformaApp:
 
         # Кнопка расчета CV
         calculate_cv_button = ttk.Button(
-            self.input_frame,
+            container,
             text="Рассчитать CV и Agency Fee",
             command=self.calculate_cv_and_agency_fee,
             bootstyle='primary'
@@ -240,7 +278,7 @@ class ProformaApp:
             calculate_icon_photo = None
 
         calculate_button = ttk.Button(
-            self.input_frame,
+            container,
             text=" Рассчитать",
             image=calculate_icon_photo,
             compound=LEFT,
@@ -252,7 +290,7 @@ class ProformaApp:
         calculate_button.pack(pady=20)
 
         # Фрейм для дополнительных Dues
-        dues_frame = ttk.Labelframe(self.input_frame, text="Дополнительные Dues")
+        dues_frame = ttk.Labelframe(container, text="Дополнительные Dues")
         dues_frame.pack(fill=X, padx=10, pady=10)
 
         self.additional_dues = []
@@ -278,7 +316,7 @@ class ProformaApp:
         add_due_button.pack(anchor='w', padx=5, pady=5)
 
         # Фрейм для дополнительных Fees
-        fees_frame = ttk.Labelframe(self.input_frame, text="Дополнительные Fees")
+        fees_frame = ttk.Labelframe(container, text="Дополнительные Fees")
         fees_frame.pack(fill=X, padx=10, pady=10)
 
         self.additional_fees = []
@@ -303,11 +341,6 @@ class ProformaApp:
         add_fee_button = ttk.Button(fees_frame, text="Добавить Fee", command=add_additional_fee, bootstyle='success')
         add_fee_button.pack(anchor='w', padx=5, pady=5)
 
-        # После создания полей ввода для lbp, beam, rdm, добавьте обработчики событий
-        # self.entries['lbp'].bind("<FocusOut>", self.on_dimension_change)
-        # self.entries['beam'].bind("<FocusOut>", self.on_dimension_change)
-        # self.entries['rdm'].bind("<FocusOut>", self.on_dimension_change)
-
     def calculate_cv_and_agency_fee(self):
         """Метод для расчёта CV и Agency Fee при нажатии кнопки."""
         try:
@@ -325,36 +358,6 @@ class ProformaApp:
 
             self.cv = calculate_cv(lbp, beam, rdm)
             logger.info(f"CV рассчитан: {self.cv}")
-
-            # Обновляем поле Agency Fee с полученным значением
-            agency_fee = get_agency_fee(self.cv)
-            if agency_fee is not None:
-                self.entries['agency_fee'].delete(0, tk.END)
-                self.entries['agency_fee'].insert(0, format_amount(agency_fee))
-            else:
-                messagebox.showwarning("Внимание", "CV не соответствует ни одному диапазону в таблице Agency Fee.")
-
-            # Отображаем всплывающее окно с таблицей agency fee
-            show_agency_fee_table(self.cv)
-
-        except ValueError as e:
-            logger.error(f"Ошибка при вводе размеров: {e}")
-            messagebox.showerror("Ошибка ввода",
-                                 "Пожалуйста, введите корректные числовые значения для LBP, Beam и RDM.")
-
-    def on_dimension_change(self, event):
-        try:
-            lbp_str = self.entries['lbp'].get().strip()
-            beam_str = self.entries['beam'].get().strip()
-            rdm_str = self.entries['rdm'].get().strip()
-
-            if not lbp_str or not beam_str or not rdm_str:
-                # Если одно из полей пустое, не выполняем расчёт
-                return
-
-            lbp = parse_input(lbp_str)
-            beam = parse_input(beam_str)
-            rdm = parse_input(rdm_str)
 
             # Обновляем поле Agency Fee с полученным значением
             agency_fee = get_agency_fee(self.cv)
@@ -563,6 +566,14 @@ class ProformaApp:
             logger.error(f"Ошибка при расчете: {e}")
             messagebox.showerror("Ошибка", str(e))
 
+        # После успешного расчёта сохраняем данные PDA
+        self.pda_data = self.calculator.get_fees_and_dues()
+        logger.info(f"PDA Data: {self.pda_data}")  # Добавляем логирование для проверки данных
+        # Обновляем вкладку FDA с новыми данными
+        if hasattr(self, 'fda_tab'):
+            self.fda_tab.update_pda_data(self.pda_data)
+            logger.info("FDA tab updated with new PDA data")
+
     def update_results(self):
         # Очистка предыдущих результатов
         for item in self.tree.get_children():
@@ -587,18 +598,13 @@ class ProformaApp:
             return
 
         # Заполнение таблицы результатов (только Dues)
-        for fee_data in self.calculator.get_fee_display_data():
+        dues_data = self.calculator.get_fee_display_data()
+        for fee_data in dues_data:
             if fee_data[0] not in ["Agency fee", "Bank charges"]:
                 self.tree.insert("", "end", values=fee_data)
 
         # Добавление пустой строки для разделения
         self.tree.insert("", "end", values=("", "", ""))
-
-        # Добавление итоговых сумм по текущему расчёту
-        # self.tree.insert("", "end", values=("Subtotal (Dues)", "", format_amount(self.calculator.subtotal_dues)))
-        # self.tree.insert("", "end",
-        #                  values=("Subtotal Agency Fees", "", format_amount(self.calculator.subtotal_agency_fees)))
-        # self.tree.insert("", "end", values=("Total", "", format_amount(self.calculator.total_amount)))
 
         # Очистка предыдущих результатов в fixed_totals_tree
         for item in self.fixed_totals_tree.get_children():
@@ -616,18 +622,6 @@ class ProformaApp:
                 f"Grand total basis {percentage}% overtime", format_amount(totals['grand_total'])))
             # Добавляем пустую строку для разделения
             self.fixed_totals_tree.insert("", "end", values=("", ""))
-
-        # Добавление дополнительных таблиц с фиксированными ставками овертайма
-        # for rate, totals in self.calculator.fixed_totals.items():
-        #     for rate, totals in self.calculator.fixed_totals.items():
-        #         percentage = int(rate * 100)
-        #         self.tree.insert("", "end", values=(
-        #         f"Total fee with {percentage}% overtime", "", format_amount(totals['total_fee'])))
-        #         self.tree.insert("", "end", values=(
-        #         f"Total agency fee (Basis {percentage}% overtime)", "", format_amount(totals['total_agency_fee'])))
-        #         self.tree.insert("", "end", values=(
-        #         f"Grand total basis {percentage}% overtime", "", format_amount(totals['grand_total'])))
-        #         self.tree.insert("", "end", values=("", "", ""))  # Пустая строка для разделения
 
         # Обновление итоговых сумм
         self.subtotal_dues_label.config(text=f"Subtotal (Dues): {format_amount(self.calculator.subtotal_dues)}")
@@ -852,3 +846,9 @@ class ProformaApp:
             return None
 
         return soffice_path
+
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = ProformaApp(root)
+    root.mainloop()

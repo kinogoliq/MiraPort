@@ -56,3 +56,5 @@ LOGO_PATH = resource_path('icons/app_icon.icns')
 TEMPLATE_PATH = resource_path('templates/template.xlsx')
 START_ROW_FEES = 23
 START_ROW_AGENCY_FEES = 45
+FDA_TEMPLATE_PATH = 'templates/fda_template.xlsx'  # Укажите правильный путь к вашему шаблону
+

@@ -11,18 +11,28 @@ from utils import parse_input, format_amount, parse_overtime, ceil_value
 
 
 class Fee:
-    def __init__(self, name, coefficient, vat_applicable, vat_included=False, uses_miles=False):
+    def __init__(
+            self,
+            name,
+            coefficient,
+            vat_applicable=False,
+            vat_included=False,
+            category='Dues',
+            uses_miles=False
+    ):
         """
         :param name: Название сбора.
         :param coefficient: Коэффициент для расчета.
-        :param vat_applicable: Применяется ли VAT.
-        :param vat_included: Включен ли VAT в коэффициент.
-        :param uses_miles: Используются ли мили в расчете.
+        :param vat_applicable: Применяется ли VAT (по умолчанию False).
+        :param vat_included: Включен ли VAT в коэффициент (по умолчанию False).
+        :param category: Категория сбора (по умолчанию 'Dues').
+        :param uses_miles: Используются ли мили в расчете (по умолчанию False).
         """
         self.name = name
         self.coefficient = coefficient
         self.vat_applicable = vat_applicable
         self.vat_included = vat_included
+        self.category = category
         self.uses_miles = uses_miles
         self.amount = 0.0
         self.vat_amount = 0.0
@@ -39,7 +49,7 @@ class Fee:
             if self.vat_included:
                 # VAT уже включен в коэффициент, поэтому не добавляем его к сумме
                 vat_base = base_amount / (1 + VAT_RATE)
-                self.vat_amount = vat_base * VAT_RATE
+                self.vat_amount = base_amount - vat_base
                 self.total_amount = base_amount  # Общая сумма уже включает VAT
             else:
                 # VAT не включен в коэффициент, добавляем VAT к сумме
@@ -60,7 +70,7 @@ class Fee:
 class FeeCalculator:
     def __init__(self, inputs):
         self.inputs = inputs
-        self.cv = inputs.get('cv', 0)
+        self.cv = 0.0
         self.fees = []
         self.additional_dues = []
         self.additional_fees = []
@@ -89,13 +99,13 @@ class FeeCalculator:
 
         # Расчет сборов без VAT
         for fee_name, coefficient in FEES_WITHOUT_VAT.items():
-            fee = Fee(fee_name, coefficient, vat_applicable=False)
+            fee = Fee(name=fee_name, coefficient=coefficient, vat_applicable=False, category='Dues')
             fee.calculate(cv)
             self.fees.append(fee)
 
         # Расчет сборов с VAT и учетом миль
         for fee_name, coefficient in FEES_WITH_VAT_WITH_MILES.items():
-            fee = Fee(fee_name, coefficient, vat_applicable=True, uses_miles=True)
+            fee = Fee(name=fee_name, coefficient=coefficient, vat_applicable=True, uses_miles=True, category='Dues')
             if "in" in fee_name.lower():
                 if "inward" in fee_name.lower():
                     miles = int(self.inputs['miles_inward_in'])
@@ -118,7 +128,7 @@ class FeeCalculator:
         for fee_name, coefficient in FEES_WITH_VAT_WITHOUT_MILES.items():
             # Проверяем, включен ли VAT в коэффициент
             vat_included = fee_name in FEES_WITH_INCLUDED_VAT
-            fee = Fee(fee_name, coefficient, vat_applicable=True, vat_included=vat_included)
+            fee = Fee(name=fee_name, coefficient=coefficient, vat_applicable=True, vat_included=vat_included, category='Dues')
             if "in" in fee_name.lower():
                 overtime_percentage = overtime_in_percentage
             elif "out" in fee_name.lower():
@@ -136,33 +146,55 @@ class FeeCalculator:
             amount = parse_input(due['amount'])
             self.additional_dues.append({'name': name, 'amount': amount})
             # Создаем объект Fee для отображения в таблице
-            fee = Fee(name, 0.0, vat_applicable=False)
+            fee = Fee(name=name, coefficient=0.0, vat_applicable=False, category='Dues')
             fee.total_amount = amount
             fee.amount = amount
             self.fees.append(fee)
 
+        # Обработка Agency Fee и Bank Charges
+        agency_fee_amount = parse_input(self.inputs['agency_fee'])
+        agency_fee = Fee(name='Agency fee', coefficient=0.0, vat_applicable=False, category='Agency Fees')
+        agency_fee.total_amount = agency_fee_amount
+        agency_fee.amount = agency_fee_amount
+        self.fees.append(agency_fee)
+
+        bank_charges_amount = parse_input(self.inputs['bank_charges'])
+        bank_charges = Fee(name='Bank charges', coefficient=0.0, vat_applicable=False, category='Agency Fees')
+        bank_charges.total_amount = bank_charges_amount
+        bank_charges.amount = bank_charges_amount
+        self.fees.append(bank_charges)
+
         # Обработка дополнительных Fees
         self.additional_fees = []
-        for fee in self.inputs.get('additional_fees', []):
-            name = fee['name']
-            amount = parse_input(fee['amount'])
+        for fee_input in self.inputs.get('additional_fees', []):
+            name = fee_input['name']
+            amount = parse_input(fee_input['amount'])
             self.additional_fees.append({'name': name, 'amount': amount})
+            fee = Fee(name=name, coefficient=0.0, vat_applicable=False, category='Agency Fees')
+            fee.total_amount = amount
+            fee.amount = amount
+            self.fees.append(fee)
 
     def calculate_totals(self):
         # Суммируем все Dues
-        self.subtotal_dues = sum(fee.total_amount for fee in self.fees if fee.name not in ['Agency fee', 'Bank charges'])
-        self.total_vat = sum(fee.vat_amount for fee in self.fees)
+        self.subtotal_dues = sum(fee.total_amount for fee in self.fees if fee.category == 'Dues')
+        self.total_vat = sum(fee.vat_amount for fee in self.fees if fee.vat_applicable)
 
-        # Суммируем Agency fee и Bank charges
-        agency_fee = parse_input(self.inputs['agency_fee'])
-        bank_charges = parse_input(self.inputs['bank_charges'])
-        self.subtotal_agency_fees = agency_fee + bank_charges
-
-        # Добавляем дополнительные Fees
-        for fee in self.additional_fees:
-            self.subtotal_agency_fees += fee['amount']
+        # Суммируем Agency Fees
+        self.subtotal_agency_fees = sum(fee.total_amount for fee in self.fees if fee.category == 'Agency Fees')
 
         self.total_amount = self.subtotal_dues + self.subtotal_agency_fees
+
+    def get_fees_and_dues(self):
+        """Возвращает список словарей с информацией о fees и dues."""
+        fees_and_dues = []
+        for fee in self.fees:
+            fees_and_dues.append({
+                'name': fee.name,
+                'amount': fee.total_amount,
+                'category': fee.category  # 'Dues' или 'Agency Fees'
+            })
+        return fees_and_dues
 
     def calculate_fixed_overtime_totals(self):
         for rate in self.fixed_overtime_rates:
@@ -178,7 +210,7 @@ class FeeCalculator:
 
             # Сохраняем результаты
             self.fixed_totals[rate] = {
-                'total_fee': temp_calculator.subtotal_dues,  # Или другой соответствующий атрибут
+                'total_fee': temp_calculator.subtotal_dues,
                 'total_agency_fee': temp_calculator.subtotal_agency_fees,
                 'grand_total': temp_calculator.total_amount
             }
@@ -186,5 +218,6 @@ class FeeCalculator:
     def get_fee_display_data(self):
         data = []
         for fee in self.fees:
-            data.append(fee.get_display_values())
+            if fee.category == 'Dues':
+                data.append(fee.get_display_values())
         return data
