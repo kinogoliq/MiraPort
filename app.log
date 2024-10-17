@@ -5978,3 +5978,333 @@ AttributeError: 'MergedCell' object attribute 'value' is read-only
 2024-10-14 14:14:52,363 [INFO] gui: FDA tab updated with new PDA data
 2024-10-14 14:14:54,701 [INFO] gui: Начало генерации PDF по пути: /var/folders/7m/7s9l3kgd3jjdnhm3rys7l72c0000gn/T/a0zw1i2w.pdf
 2024-10-14 14:14:54,702 [DEBUG] gui: Загрузка шаблона Excel
+2024-10-14 14:23:07,586 [INFO] __main__: Запуск приложения
+2024-10-14 14:23:07,836 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-14 14:23:07,836 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 41 9
+2024-10-14 14:23:07,836 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 62 143839
+2024-10-14 14:23:07,855 [DEBUG] PIL.Image: Importing BlpImagePlugin
+2024-10-14 14:23:07,856 [DEBUG] PIL.Image: Importing BmpImagePlugin
+2024-10-14 14:23:07,856 [DEBUG] PIL.Image: Importing BufrStubImagePlugin
+2024-10-14 14:23:07,856 [DEBUG] PIL.Image: Importing CurImagePlugin
+2024-10-14 14:23:07,856 [DEBUG] PIL.Image: Importing DcxImagePlugin
+2024-10-14 14:23:07,857 [DEBUG] PIL.Image: Importing DdsImagePlugin
+2024-10-14 14:23:07,858 [DEBUG] PIL.Image: Importing EpsImagePlugin
+2024-10-14 14:23:07,858 [DEBUG] PIL.Image: Importing FitsImagePlugin
+2024-10-14 14:23:07,859 [DEBUG] PIL.Image: Importing FliImagePlugin
+2024-10-14 14:23:07,859 [DEBUG] PIL.Image: Importing FpxImagePlugin
+2024-10-14 14:23:07,860 [DEBUG] PIL.Image: Image: failed to import FpxImagePlugin: No module named 'olefile'
+2024-10-14 14:23:07,860 [DEBUG] PIL.Image: Importing FtexImagePlugin
+2024-10-14 14:23:07,860 [DEBUG] PIL.Image: Importing GbrImagePlugin
+2024-10-14 14:23:07,860 [DEBUG] PIL.Image: Importing GifImagePlugin
+2024-10-14 14:23:07,860 [DEBUG] PIL.Image: Importing GribStubImagePlugin
+2024-10-14 14:23:07,860 [DEBUG] PIL.Image: Importing Hdf5StubImagePlugin
+2024-10-14 14:23:07,860 [DEBUG] PIL.Image: Importing IcnsImagePlugin
+2024-10-14 14:23:07,861 [DEBUG] PIL.Image: Importing IcoImagePlugin
+2024-10-14 14:23:07,861 [DEBUG] PIL.Image: Importing ImImagePlugin
+2024-10-14 14:23:07,862 [DEBUG] PIL.Image: Importing ImtImagePlugin
+2024-10-14 14:23:07,862 [DEBUG] PIL.Image: Importing IptcImagePlugin
+2024-10-14 14:23:07,863 [DEBUG] PIL.Image: Importing JpegImagePlugin
+2024-10-14 14:23:07,863 [DEBUG] PIL.Image: Importing Jpeg2KImagePlugin
+2024-10-14 14:23:07,863 [DEBUG] PIL.Image: Importing McIdasImagePlugin
+2024-10-14 14:23:07,863 [DEBUG] PIL.Image: Importing MicImagePlugin
+2024-10-14 14:23:07,863 [DEBUG] PIL.Image: Image: failed to import MicImagePlugin: No module named 'olefile'
+2024-10-14 14:23:07,863 [DEBUG] PIL.Image: Importing MpegImagePlugin
+2024-10-14 14:23:07,863 [DEBUG] PIL.Image: Importing MpoImagePlugin
+2024-10-14 14:23:07,865 [DEBUG] PIL.Image: Importing MspImagePlugin
+2024-10-14 14:23:07,865 [DEBUG] PIL.Image: Importing PalmImagePlugin
+2024-10-14 14:23:07,865 [DEBUG] PIL.Image: Importing PcdImagePlugin
+2024-10-14 14:23:07,865 [DEBUG] PIL.Image: Importing PcxImagePlugin
+2024-10-14 14:23:07,865 [DEBUG] PIL.Image: Importing PdfImagePlugin
+2024-10-14 14:23:07,868 [DEBUG] PIL.Image: Importing PixarImagePlugin
+2024-10-14 14:23:07,869 [DEBUG] PIL.Image: Importing PngImagePlugin
+2024-10-14 14:23:07,869 [DEBUG] PIL.Image: Importing PpmImagePlugin
+2024-10-14 14:23:07,869 [DEBUG] PIL.Image: Importing PsdImagePlugin
+2024-10-14 14:23:07,869 [DEBUG] PIL.Image: Importing QoiImagePlugin
+2024-10-14 14:23:07,869 [DEBUG] PIL.Image: Importing SgiImagePlugin
+2024-10-14 14:23:07,869 [DEBUG] PIL.Image: Importing SpiderImagePlugin
+2024-10-14 14:23:07,870 [DEBUG] PIL.Image: Importing SunImagePlugin
+2024-10-14 14:23:07,870 [DEBUG] PIL.Image: Importing TgaImagePlugin
+2024-10-14 14:23:07,870 [DEBUG] PIL.Image: Importing TiffImagePlugin
+2024-10-14 14:23:07,870 [DEBUG] PIL.Image: Importing WebPImagePlugin
+2024-10-14 14:23:07,873 [DEBUG] PIL.Image: Importing WmfImagePlugin
+2024-10-14 14:23:07,873 [DEBUG] PIL.Image: Importing XbmImagePlugin
+2024-10-14 14:23:07,874 [DEBUG] PIL.Image: Importing XpmImagePlugin
+2024-10-14 14:23:07,874 [DEBUG] PIL.Image: Importing XVThumbImagePlugin
+2024-10-14 14:23:07,875 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 165116 13
+2024-10-14 14:23:07,875 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 165141 65536
+2024-10-14 14:23:07,911 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-14 14:23:07,911 [DEBUG] PIL.PngImagePlugin: STREAM b'sBIT' 41 4
+2024-10-14 14:23:07,911 [DEBUG] PIL.PngImagePlugin: b'sBIT' 41 4 (unknown)
+2024-10-14 14:23:07,911 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 57 9
+2024-10-14 14:23:07,911 [DEBUG] PIL.PngImagePlugin: STREAM b'tEXt' 78 25
+2024-10-14 14:23:07,911 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 115 8192
+2024-10-14 14:23:07,917 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-14 14:23:07,917 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 41 9
+2024-10-14 14:23:07,917 [DEBUG] PIL.PngImagePlugin: STREAM b'tEXt' 62 25
+2024-10-14 14:23:07,917 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 99 8192
+2024-10-14 14:23:07,921 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-14 14:23:07,921 [DEBUG] PIL.PngImagePlugin: STREAM b'sBIT' 41 4
+2024-10-14 14:23:07,921 [DEBUG] PIL.PngImagePlugin: b'sBIT' 41 4 (unknown)
+2024-10-14 14:23:07,921 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 57 9
+2024-10-14 14:23:07,921 [DEBUG] PIL.PngImagePlugin: STREAM b'tEXt' 78 25
+2024-10-14 14:23:07,921 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 115 8192
+2024-10-14 14:23:07,925 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-14 14:23:07,925 [DEBUG] PIL.PngImagePlugin: STREAM b'sBIT' 41 4
+2024-10-14 14:23:07,925 [DEBUG] PIL.PngImagePlugin: b'sBIT' 41 4 (unknown)
+2024-10-14 14:23:07,925 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 57 9
+2024-10-14 14:23:07,925 [DEBUG] PIL.PngImagePlugin: STREAM b'tEXt' 78 25
+2024-10-14 14:23:07,925 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 115 8192
+2024-10-14 14:23:07,932 [INFO] fda_tab: Populating FDA table with data: []
+2024-10-14 14:23:25,400 [INFO] gui: CV рассчитан: 50721.723
+2024-10-14 14:23:55,484 [INFO] gui: Начало расчета
+2024-10-14 14:23:55,488 [INFO] gui: Расчет успешно завершен
+2024-10-14 14:23:55,488 [INFO] gui: PDA Data: [{'name': 'Tonnage dues (In/out)', 'amount': 14121.004799999999, 'category': 'Dues'}, {'name': 'Canal dues (in/out)', 'amount': 2596.9664000000002, 'category': 'Dues'}, {'name': 'Lighthouse dues', 'amount': 2282.49, 'category': 'Dues'}, {'name': 'Berth dues', 'amount': 1420.2160000000001, 'category': 'Dues'}, {'name': 'Sanitary dues', 'amount': 892.7072000000001, 'category': 'Dues'}, {'name': 'Administrative dues', 'amount': 892.7072000000001, 'category': 'Dues'}, {'name': 'Port information fee', 'amount': 329.693, 'category': 'Dues'}, {'name': 'Inward pilotage in', 'amount': 846.04296, 'category': 'Dues'}, {'name': 'Inward pilotage out', 'amount': 846.04296, 'category': 'Dues'}, {'name': 'Outward pilotage in', 'amount': 1192.98144, 'category': 'Dues'}, {'name': 'Outward pilotage out', 'amount': 1192.98144, 'category': 'Dues'}, {'name': 'Services of VTCS', 'amount': 5441.4510878, 'category': 'Dues'}, {'name': 'Tugs in', 'amount': 13796.384000000002, 'category': 'Dues'}, {'name': 'Tugs out', 'amount': 13796.384000000002, 'category': 'Dues'}, {'name': 'Mooring in', 'amount': 694.0392704, 'category': 'Dues'}, {'name': 'Mooring out', 'amount': 694.0392704, 'category': 'Dues'}, {'name': 'Agency fee', 'amount': 5120.0, 'category': 'Agency Fees'}, {'name': 'Bank charges', 'amount': 190.0, 'category': 'Agency Fees'}]
+2024-10-14 14:23:55,489 [INFO] fda_tab: Updating FDA tab with PDA data: [{'name': 'Tonnage dues (In/out)', 'amount': 14121.004799999999, 'category': 'Dues'}, {'name': 'Canal dues (in/out)', 'amount': 2596.9664000000002, 'category': 'Dues'}, {'name': 'Lighthouse dues', 'amount': 2282.49, 'category': 'Dues'}, {'name': 'Berth dues', 'amount': 1420.2160000000001, 'category': 'Dues'}, {'name': 'Sanitary dues', 'amount': 892.7072000000001, 'category': 'Dues'}, {'name': 'Administrative dues', 'amount': 892.7072000000001, 'category': 'Dues'}, {'name': 'Port information fee', 'amount': 329.693, 'category': 'Dues'}, {'name': 'Inward pilotage in', 'amount': 846.04296, 'category': 'Dues'}, {'name': 'Inward pilotage out', 'amount': 846.04296, 'category': 'Dues'}, {'name': 'Outward pilotage in', 'amount': 1192.98144, 'category': 'Dues'}, {'name': 'Outward pilotage out', 'amount': 1192.98144, 'category': 'Dues'}, {'name': 'Services of VTCS', 'amount': 5441.4510878, 'category': 'Dues'}, {'name': 'Tugs in', 'amount': 13796.384000000002, 'category': 'Dues'}, {'name': 'Tugs out', 'amount': 13796.384000000002, 'category': 'Dues'}, {'name': 'Mooring in', 'amount': 694.0392704, 'category': 'Dues'}, {'name': 'Mooring out', 'amount': 694.0392704, 'category': 'Dues'}, {'name': 'Agency fee', 'amount': 5120.0, 'category': 'Agency Fees'}, {'name': 'Bank charges', 'amount': 190.0, 'category': 'Agency Fees'}]
+2024-10-14 14:23:55,489 [INFO] fda_tab: Populating FDA table with data: [{'name': 'Tonnage dues (In/out)', 'amount': 14121.004799999999, 'category': 'Dues'}, {'name': 'Canal dues (in/out)', 'amount': 2596.9664000000002, 'category': 'Dues'}, {'name': 'Lighthouse dues', 'amount': 2282.49, 'category': 'Dues'}, {'name': 'Berth dues', 'amount': 1420.2160000000001, 'category': 'Dues'}, {'name': 'Sanitary dues', 'amount': 892.7072000000001, 'category': 'Dues'}, {'name': 'Administrative dues', 'amount': 892.7072000000001, 'category': 'Dues'}, {'name': 'Port information fee', 'amount': 329.693, 'category': 'Dues'}, {'name': 'Inward pilotage in', 'amount': 846.04296, 'category': 'Dues'}, {'name': 'Inward pilotage out', 'amount': 846.04296, 'category': 'Dues'}, {'name': 'Outward pilotage in', 'amount': 1192.98144, 'category': 'Dues'}, {'name': 'Outward pilotage out', 'amount': 1192.98144, 'category': 'Dues'}, {'name': 'Services of VTCS', 'amount': 5441.4510878, 'category': 'Dues'}, {'name': 'Tugs in', 'amount': 13796.384000000002, 'category': 'Dues'}, {'name': 'Tugs out', 'amount': 13796.384000000002, 'category': 'Dues'}, {'name': 'Mooring in', 'amount': 694.0392704, 'category': 'Dues'}, {'name': 'Mooring out', 'amount': 694.0392704, 'category': 'Dues'}, {'name': 'Agency fee', 'amount': 5120.0, 'category': 'Agency Fees'}, {'name': 'Bank charges', 'amount': 190.0, 'category': 'Agency Fees'}]
+2024-10-14 14:23:55,496 [INFO] gui: FDA tab updated with new PDA data
+2024-10-14 14:23:58,164 [INFO] gui: Начало генерации PDF по пути: /var/folders/7m/7s9l3kgd3jjdnhm3rys7l72c0000gn/T/jqblnkv6.pdf
+2024-10-14 14:23:58,164 [DEBUG] gui: Загрузка шаблона Excel
+2024-10-14 14:25:21,075 [INFO] gui: CV рассчитан: 11554.5375
+2024-10-14 14:25:33,773 [INFO] gui: Начало расчета
+2024-10-14 14:25:33,781 [INFO] gui: Расчет успешно завершен
+2024-10-14 14:25:33,781 [INFO] gui: PDA Data: [{'name': 'Tonnage dues (In/out)', 'amount': 3216.912, 'category': 'Dues'}, {'name': 'Canal dues (in/out)', 'amount': 591.616, 'category': 'Dues'}, {'name': 'Lighthouse dues', 'amount': 519.975, 'category': 'Dues'}, {'name': 'Berth dues', 'amount': 323.54, 'category': 'Dues'}, {'name': 'Sanitary dues', 'amount': 203.36800000000002, 'category': 'Dues'}, {'name': 'Administrative dues', 'amount': 203.36800000000002, 'category': 'Dues'}, {'name': 'Port information fee', 'amount': 75.1075, 'category': 'Dues'}, {'name': 'Inward pilotage in', 'amount': 192.73739999999998, 'category': 'Dues'}, {'name': 'Inward pilotage out', 'amount': 192.73739999999998, 'category': 'Dues'}, {'name': 'Outward pilotage in', 'amount': 271.7736, 'category': 'Dues'}, {'name': 'Outward pilotage out', 'amount': 271.7736, 'category': 'Dues'}, {'name': 'Services of VTCS', 'amount': 1239.6192445, 'category': 'Dues'}, {'name': 'Tugs in', 'amount': 3142.96, 'category': 'Dues'}, {'name': 'Tugs out', 'amount': 3142.96, 'category': 'Dues'}, {'name': 'Mooring in', 'amount': 158.109376, 'category': 'Dues'}, {'name': 'Mooring out', 'amount': 158.109376, 'category': 'Dues'}, {'name': 'Agency fee', 'amount': 2816.0, 'category': 'Agency Fees'}, {'name': 'Bank charges', 'amount': 190.0, 'category': 'Agency Fees'}]
+2024-10-14 14:25:33,782 [INFO] fda_tab: Updating FDA tab with PDA data: [{'name': 'Tonnage dues (In/out)', 'amount': 3216.912, 'category': 'Dues'}, {'name': 'Canal dues (in/out)', 'amount': 591.616, 'category': 'Dues'}, {'name': 'Lighthouse dues', 'amount': 519.975, 'category': 'Dues'}, {'name': 'Berth dues', 'amount': 323.54, 'category': 'Dues'}, {'name': 'Sanitary dues', 'amount': 203.36800000000002, 'category': 'Dues'}, {'name': 'Administrative dues', 'amount': 203.36800000000002, 'category': 'Dues'}, {'name': 'Port information fee', 'amount': 75.1075, 'category': 'Dues'}, {'name': 'Inward pilotage in', 'amount': 192.73739999999998, 'category': 'Dues'}, {'name': 'Inward pilotage out', 'amount': 192.73739999999998, 'category': 'Dues'}, {'name': 'Outward pilotage in', 'amount': 271.7736, 'category': 'Dues'}, {'name': 'Outward pilotage out', 'amount': 271.7736, 'category': 'Dues'}, {'name': 'Services of VTCS', 'amount': 1239.6192445, 'category': 'Dues'}, {'name': 'Tugs in', 'amount': 3142.96, 'category': 'Dues'}, {'name': 'Tugs out', 'amount': 3142.96, 'category': 'Dues'}, {'name': 'Mooring in', 'amount': 158.109376, 'category': 'Dues'}, {'name': 'Mooring out', 'amount': 158.109376, 'category': 'Dues'}, {'name': 'Agency fee', 'amount': 2816.0, 'category': 'Agency Fees'}, {'name': 'Bank charges', 'amount': 190.0, 'category': 'Agency Fees'}]
+2024-10-14 14:25:33,782 [INFO] fda_tab: Populating FDA table with data: [{'name': 'Tonnage dues (In/out)', 'amount': 3216.912, 'category': 'Dues'}, {'name': 'Canal dues (in/out)', 'amount': 591.616, 'category': 'Dues'}, {'name': 'Lighthouse dues', 'amount': 519.975, 'category': 'Dues'}, {'name': 'Berth dues', 'amount': 323.54, 'category': 'Dues'}, {'name': 'Sanitary dues', 'amount': 203.36800000000002, 'category': 'Dues'}, {'name': 'Administrative dues', 'amount': 203.36800000000002, 'category': 'Dues'}, {'name': 'Port information fee', 'amount': 75.1075, 'category': 'Dues'}, {'name': 'Inward pilotage in', 'amount': 192.73739999999998, 'category': 'Dues'}, {'name': 'Inward pilotage out', 'amount': 192.73739999999998, 'category': 'Dues'}, {'name': 'Outward pilotage in', 'amount': 271.7736, 'category': 'Dues'}, {'name': 'Outward pilotage out', 'amount': 271.7736, 'category': 'Dues'}, {'name': 'Services of VTCS', 'amount': 1239.6192445, 'category': 'Dues'}, {'name': 'Tugs in', 'amount': 3142.96, 'category': 'Dues'}, {'name': 'Tugs out', 'amount': 3142.96, 'category': 'Dues'}, {'name': 'Mooring in', 'amount': 158.109376, 'category': 'Dues'}, {'name': 'Mooring out', 'amount': 158.109376, 'category': 'Dues'}, {'name': 'Agency fee', 'amount': 2816.0, 'category': 'Agency Fees'}, {'name': 'Bank charges', 'amount': 190.0, 'category': 'Agency Fees'}]
+2024-10-14 14:25:33,793 [INFO] gui: FDA tab updated with new PDA data
+2024-10-14 14:25:43,758 [INFO] gui: Начало генерации PDF по пути: /var/folders/7m/7s9l3kgd3jjdnhm3rys7l72c0000gn/T/3qb32wn7.pdf
+2024-10-14 14:25:43,758 [DEBUG] gui: Загрузка шаблона Excel
+2024-10-17 11:48:11,516 [INFO] __main__: Запуск приложения
+2024-10-17 11:48:11,790 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-17 11:48:11,790 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 41 9
+2024-10-17 11:48:11,791 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 62 143839
+2024-10-17 11:48:11,811 [DEBUG] PIL.Image: Importing BlpImagePlugin
+2024-10-17 11:48:11,812 [DEBUG] PIL.Image: Importing BmpImagePlugin
+2024-10-17 11:48:11,812 [DEBUG] PIL.Image: Importing BufrStubImagePlugin
+2024-10-17 11:48:11,812 [DEBUG] PIL.Image: Importing CurImagePlugin
+2024-10-17 11:48:11,812 [DEBUG] PIL.Image: Importing DcxImagePlugin
+2024-10-17 11:48:11,813 [DEBUG] PIL.Image: Importing DdsImagePlugin
+2024-10-17 11:48:11,814 [DEBUG] PIL.Image: Importing EpsImagePlugin
+2024-10-17 11:48:11,815 [DEBUG] PIL.Image: Importing FitsImagePlugin
+2024-10-17 11:48:11,815 [DEBUG] PIL.Image: Importing FliImagePlugin
+2024-10-17 11:48:11,816 [DEBUG] PIL.Image: Importing FpxImagePlugin
+2024-10-17 11:48:11,816 [DEBUG] PIL.Image: Image: failed to import FpxImagePlugin: No module named 'olefile'
+2024-10-17 11:48:11,816 [DEBUG] PIL.Image: Importing FtexImagePlugin
+2024-10-17 11:48:11,816 [DEBUG] PIL.Image: Importing GbrImagePlugin
+2024-10-17 11:48:11,816 [DEBUG] PIL.Image: Importing GifImagePlugin
+2024-10-17 11:48:11,816 [DEBUG] PIL.Image: Importing GribStubImagePlugin
+2024-10-17 11:48:11,817 [DEBUG] PIL.Image: Importing Hdf5StubImagePlugin
+2024-10-17 11:48:11,817 [DEBUG] PIL.Image: Importing IcnsImagePlugin
+2024-10-17 11:48:11,818 [DEBUG] PIL.Image: Importing IcoImagePlugin
+2024-10-17 11:48:11,818 [DEBUG] PIL.Image: Importing ImImagePlugin
+2024-10-17 11:48:11,818 [DEBUG] PIL.Image: Importing ImtImagePlugin
+2024-10-17 11:48:11,818 [DEBUG] PIL.Image: Importing IptcImagePlugin
+2024-10-17 11:48:11,819 [DEBUG] PIL.Image: Importing JpegImagePlugin
+2024-10-17 11:48:11,819 [DEBUG] PIL.Image: Importing Jpeg2KImagePlugin
+2024-10-17 11:48:11,819 [DEBUG] PIL.Image: Importing McIdasImagePlugin
+2024-10-17 11:48:11,819 [DEBUG] PIL.Image: Importing MicImagePlugin
+2024-10-17 11:48:11,819 [DEBUG] PIL.Image: Image: failed to import MicImagePlugin: No module named 'olefile'
+2024-10-17 11:48:11,819 [DEBUG] PIL.Image: Importing MpegImagePlugin
+2024-10-17 11:48:11,819 [DEBUG] PIL.Image: Importing MpoImagePlugin
+2024-10-17 11:48:11,821 [DEBUG] PIL.Image: Importing MspImagePlugin
+2024-10-17 11:48:11,821 [DEBUG] PIL.Image: Importing PalmImagePlugin
+2024-10-17 11:48:11,821 [DEBUG] PIL.Image: Importing PcdImagePlugin
+2024-10-17 11:48:11,822 [DEBUG] PIL.Image: Importing PcxImagePlugin
+2024-10-17 11:48:11,822 [DEBUG] PIL.Image: Importing PdfImagePlugin
+2024-10-17 11:48:11,825 [DEBUG] PIL.Image: Importing PixarImagePlugin
+2024-10-17 11:48:11,825 [DEBUG] PIL.Image: Importing PngImagePlugin
+2024-10-17 11:48:11,825 [DEBUG] PIL.Image: Importing PpmImagePlugin
+2024-10-17 11:48:11,825 [DEBUG] PIL.Image: Importing PsdImagePlugin
+2024-10-17 11:48:11,825 [DEBUG] PIL.Image: Importing QoiImagePlugin
+2024-10-17 11:48:11,825 [DEBUG] PIL.Image: Importing SgiImagePlugin
+2024-10-17 11:48:11,825 [DEBUG] PIL.Image: Importing SpiderImagePlugin
+2024-10-17 11:48:11,826 [DEBUG] PIL.Image: Importing SunImagePlugin
+2024-10-17 11:48:11,826 [DEBUG] PIL.Image: Importing TgaImagePlugin
+2024-10-17 11:48:11,826 [DEBUG] PIL.Image: Importing TiffImagePlugin
+2024-10-17 11:48:11,826 [DEBUG] PIL.Image: Importing WebPImagePlugin
+2024-10-17 11:48:11,829 [DEBUG] PIL.Image: Importing WmfImagePlugin
+2024-10-17 11:48:11,830 [DEBUG] PIL.Image: Importing XbmImagePlugin
+2024-10-17 11:48:11,830 [DEBUG] PIL.Image: Importing XpmImagePlugin
+2024-10-17 11:48:11,830 [DEBUG] PIL.Image: Importing XVThumbImagePlugin
+2024-10-17 11:48:11,832 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 165116 13
+2024-10-17 11:48:11,832 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 165141 65536
+2024-10-17 11:48:11,866 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-17 11:48:11,866 [DEBUG] PIL.PngImagePlugin: STREAM b'sBIT' 41 4
+2024-10-17 11:48:11,866 [DEBUG] PIL.PngImagePlugin: b'sBIT' 41 4 (unknown)
+2024-10-17 11:48:11,866 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 57 9
+2024-10-17 11:48:11,866 [DEBUG] PIL.PngImagePlugin: STREAM b'tEXt' 78 25
+2024-10-17 11:48:11,866 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 115 8192
+2024-10-17 12:57:19,405 [INFO] __main__: Запуск приложения
+2024-10-17 12:57:19,582 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-17 12:57:19,582 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 41 9
+2024-10-17 12:57:19,582 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 62 143839
+2024-10-17 12:57:19,600 [DEBUG] PIL.Image: Importing BlpImagePlugin
+2024-10-17 12:57:19,601 [DEBUG] PIL.Image: Importing BmpImagePlugin
+2024-10-17 12:57:19,601 [DEBUG] PIL.Image: Importing BufrStubImagePlugin
+2024-10-17 12:57:19,601 [DEBUG] PIL.Image: Importing CurImagePlugin
+2024-10-17 12:57:19,601 [DEBUG] PIL.Image: Importing DcxImagePlugin
+2024-10-17 12:57:19,602 [DEBUG] PIL.Image: Importing DdsImagePlugin
+2024-10-17 12:57:19,603 [DEBUG] PIL.Image: Importing EpsImagePlugin
+2024-10-17 12:57:19,603 [DEBUG] PIL.Image: Importing FitsImagePlugin
+2024-10-17 12:57:19,604 [DEBUG] PIL.Image: Importing FliImagePlugin
+2024-10-17 12:57:19,604 [DEBUG] PIL.Image: Importing FpxImagePlugin
+2024-10-17 12:57:19,605 [DEBUG] PIL.Image: Image: failed to import FpxImagePlugin: No module named 'olefile'
+2024-10-17 12:57:19,605 [DEBUG] PIL.Image: Importing FtexImagePlugin
+2024-10-17 12:57:19,605 [DEBUG] PIL.Image: Importing GbrImagePlugin
+2024-10-17 12:57:19,605 [DEBUG] PIL.Image: Importing GifImagePlugin
+2024-10-17 12:57:19,605 [DEBUG] PIL.Image: Importing GribStubImagePlugin
+2024-10-17 12:57:19,605 [DEBUG] PIL.Image: Importing Hdf5StubImagePlugin
+2024-10-17 12:57:19,605 [DEBUG] PIL.Image: Importing IcnsImagePlugin
+2024-10-17 12:57:19,606 [DEBUG] PIL.Image: Importing IcoImagePlugin
+2024-10-17 12:57:19,606 [DEBUG] PIL.Image: Importing ImImagePlugin
+2024-10-17 12:57:19,606 [DEBUG] PIL.Image: Importing ImtImagePlugin
+2024-10-17 12:57:19,607 [DEBUG] PIL.Image: Importing IptcImagePlugin
+2024-10-17 12:57:19,607 [DEBUG] PIL.Image: Importing JpegImagePlugin
+2024-10-17 12:57:19,607 [DEBUG] PIL.Image: Importing Jpeg2KImagePlugin
+2024-10-17 12:57:19,607 [DEBUG] PIL.Image: Importing McIdasImagePlugin
+2024-10-17 12:57:19,607 [DEBUG] PIL.Image: Importing MicImagePlugin
+2024-10-17 12:57:19,607 [DEBUG] PIL.Image: Image: failed to import MicImagePlugin: No module named 'olefile'
+2024-10-17 12:57:19,607 [DEBUG] PIL.Image: Importing MpegImagePlugin
+2024-10-17 12:57:19,607 [DEBUG] PIL.Image: Importing MpoImagePlugin
+2024-10-17 12:57:19,609 [DEBUG] PIL.Image: Importing MspImagePlugin
+2024-10-17 12:57:19,609 [DEBUG] PIL.Image: Importing PalmImagePlugin
+2024-10-17 12:57:19,610 [DEBUG] PIL.Image: Importing PcdImagePlugin
+2024-10-17 12:57:19,610 [DEBUG] PIL.Image: Importing PcxImagePlugin
+2024-10-17 12:57:19,610 [DEBUG] PIL.Image: Importing PdfImagePlugin
+2024-10-17 12:57:19,613 [DEBUG] PIL.Image: Importing PixarImagePlugin
+2024-10-17 12:57:19,613 [DEBUG] PIL.Image: Importing PngImagePlugin
+2024-10-17 12:57:19,613 [DEBUG] PIL.Image: Importing PpmImagePlugin
+2024-10-17 12:57:19,613 [DEBUG] PIL.Image: Importing PsdImagePlugin
+2024-10-17 12:57:19,613 [DEBUG] PIL.Image: Importing QoiImagePlugin
+2024-10-17 12:57:19,613 [DEBUG] PIL.Image: Importing SgiImagePlugin
+2024-10-17 12:57:19,614 [DEBUG] PIL.Image: Importing SpiderImagePlugin
+2024-10-17 12:57:19,614 [DEBUG] PIL.Image: Importing SunImagePlugin
+2024-10-17 12:57:19,614 [DEBUG] PIL.Image: Importing TgaImagePlugin
+2024-10-17 12:57:19,614 [DEBUG] PIL.Image: Importing TiffImagePlugin
+2024-10-17 12:57:19,614 [DEBUG] PIL.Image: Importing WebPImagePlugin
+2024-10-17 12:57:19,618 [DEBUG] PIL.Image: Importing WmfImagePlugin
+2024-10-17 12:57:19,618 [DEBUG] PIL.Image: Importing XbmImagePlugin
+2024-10-17 12:57:19,618 [DEBUG] PIL.Image: Importing XpmImagePlugin
+2024-10-17 12:57:19,619 [DEBUG] PIL.Image: Importing XVThumbImagePlugin
+2024-10-17 12:57:19,620 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 165116 13
+2024-10-17 12:57:19,620 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 165141 65536
+2024-10-17 12:57:19,652 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-17 12:57:19,652 [DEBUG] PIL.PngImagePlugin: STREAM b'sBIT' 41 4
+2024-10-17 12:57:19,652 [DEBUG] PIL.PngImagePlugin: b'sBIT' 41 4 (unknown)
+2024-10-17 12:57:19,652 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 57 9
+2024-10-17 12:57:19,652 [DEBUG] PIL.PngImagePlugin: STREAM b'tEXt' 78 25
+2024-10-17 12:57:19,652 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 115 8192
+2024-10-17 12:57:19,658 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-17 12:57:19,658 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 41 9
+2024-10-17 12:57:19,658 [DEBUG] PIL.PngImagePlugin: STREAM b'tEXt' 62 25
+2024-10-17 12:57:19,658 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 99 8192
+2024-10-17 12:57:19,662 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-17 12:57:19,662 [DEBUG] PIL.PngImagePlugin: STREAM b'sBIT' 41 4
+2024-10-17 12:57:19,662 [DEBUG] PIL.PngImagePlugin: b'sBIT' 41 4 (unknown)
+2024-10-17 12:57:19,662 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 57 9
+2024-10-17 12:57:19,662 [DEBUG] PIL.PngImagePlugin: STREAM b'tEXt' 78 25
+2024-10-17 12:57:19,662 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 115 8192
+2024-10-17 12:57:19,665 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-17 12:57:19,665 [DEBUG] PIL.PngImagePlugin: STREAM b'sBIT' 41 4
+2024-10-17 12:57:19,665 [DEBUG] PIL.PngImagePlugin: b'sBIT' 41 4 (unknown)
+2024-10-17 12:57:19,665 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 57 9
+2024-10-17 12:57:19,665 [DEBUG] PIL.PngImagePlugin: STREAM b'tEXt' 78 25
+2024-10-17 12:57:19,665 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 115 8192
+2024-10-17 12:57:19,671 [INFO] fda_tab: Populating FDA table with data: []
+2024-10-17 12:57:46,425 [INFO] gui: Начало расчета
+2024-10-17 12:57:46,431 [INFO] gui: Расчет успешно завершен
+2024-10-17 12:57:46,431 [INFO] gui: PDA Data: [{'name': 'Tonnage dues (In/out)', 'amount': 19898.64, 'category': 'Dues'}, {'name': 'Canal dues (in/out)', 'amount': 3659.52, 'category': 'Dues'}, {'name': 'Lighthouse dues', 'amount': 3216.375, 'category': 'Dues'}, {'name': 'Berth dues', 'amount': 2001.3, 'category': 'Dues'}, {'name': 'Sanitary dues', 'amount': 1257.96, 'category': 'Dues'}, {'name': 'Administrative dues', 'amount': 1257.96, 'category': 'Dues'}, {'name': 'Port information fee', 'amount': 464.5875, 'category': 'Dues'}, {'name': 'Inward pilotage in', 'amount': 993.5024999999999, 'category': 'Dues'}, {'name': 'Inward pilotage out', 'amount': 993.5024999999999, 'category': 'Dues'}, {'name': 'Outward pilotage in', 'amount': 1400.9099999999999, 'category': 'Dues'}, {'name': 'Outward pilotage out', 'amount': 1400.9099999999999, 'category': 'Dues'}, {'name': 'Services of VTCS', 'amount': 7667.8308525, 'category': 'Dues'}, {'name': 'Tugs in', 'amount': 19441.2, 'category': 'Dues'}, {'name': 'Tugs out', 'amount': 19441.2, 'category': 'Dues'}, {'name': 'Mooring in', 'amount': 978.00672, 'category': 'Dues'}, {'name': 'Mooring out', 'amount': 978.00672, 'category': 'Dues'}, {'name': 'Agency fee', 'amount': 8712.0, 'category': 'Agency Fees'}, {'name': 'Bank charges', 'amount': 190.0, 'category': 'Agency Fees'}]
+2024-10-17 12:57:46,431 [INFO] fda_tab: Updating FDA tab with PDA data: [{'name': 'Tonnage dues (In/out)', 'amount': 19898.64, 'category': 'Dues'}, {'name': 'Canal dues (in/out)', 'amount': 3659.52, 'category': 'Dues'}, {'name': 'Lighthouse dues', 'amount': 3216.375, 'category': 'Dues'}, {'name': 'Berth dues', 'amount': 2001.3, 'category': 'Dues'}, {'name': 'Sanitary dues', 'amount': 1257.96, 'category': 'Dues'}, {'name': 'Administrative dues', 'amount': 1257.96, 'category': 'Dues'}, {'name': 'Port information fee', 'amount': 464.5875, 'category': 'Dues'}, {'name': 'Inward pilotage in', 'amount': 993.5024999999999, 'category': 'Dues'}, {'name': 'Inward pilotage out', 'amount': 993.5024999999999, 'category': 'Dues'}, {'name': 'Outward pilotage in', 'amount': 1400.9099999999999, 'category': 'Dues'}, {'name': 'Outward pilotage out', 'amount': 1400.9099999999999, 'category': 'Dues'}, {'name': 'Services of VTCS', 'amount': 7667.8308525, 'category': 'Dues'}, {'name': 'Tugs in', 'amount': 19441.2, 'category': 'Dues'}, {'name': 'Tugs out', 'amount': 19441.2, 'category': 'Dues'}, {'name': 'Mooring in', 'amount': 978.00672, 'category': 'Dues'}, {'name': 'Mooring out', 'amount': 978.00672, 'category': 'Dues'}, {'name': 'Agency fee', 'amount': 8712.0, 'category': 'Agency Fees'}, {'name': 'Bank charges', 'amount': 190.0, 'category': 'Agency Fees'}]
+2024-10-17 12:57:46,431 [INFO] fda_tab: Populating FDA table with data: [{'name': 'Tonnage dues (In/out)', 'amount': 19898.64, 'category': 'Dues'}, {'name': 'Canal dues (in/out)', 'amount': 3659.52, 'category': 'Dues'}, {'name': 'Lighthouse dues', 'amount': 3216.375, 'category': 'Dues'}, {'name': 'Berth dues', 'amount': 2001.3, 'category': 'Dues'}, {'name': 'Sanitary dues', 'amount': 1257.96, 'category': 'Dues'}, {'name': 'Administrative dues', 'amount': 1257.96, 'category': 'Dues'}, {'name': 'Port information fee', 'amount': 464.5875, 'category': 'Dues'}, {'name': 'Inward pilotage in', 'amount': 993.5024999999999, 'category': 'Dues'}, {'name': 'Inward pilotage out', 'amount': 993.5024999999999, 'category': 'Dues'}, {'name': 'Outward pilotage in', 'amount': 1400.9099999999999, 'category': 'Dues'}, {'name': 'Outward pilotage out', 'amount': 1400.9099999999999, 'category': 'Dues'}, {'name': 'Services of VTCS', 'amount': 7667.8308525, 'category': 'Dues'}, {'name': 'Tugs in', 'amount': 19441.2, 'category': 'Dues'}, {'name': 'Tugs out', 'amount': 19441.2, 'category': 'Dues'}, {'name': 'Mooring in', 'amount': 978.00672, 'category': 'Dues'}, {'name': 'Mooring out', 'amount': 978.00672, 'category': 'Dues'}, {'name': 'Agency fee', 'amount': 8712.0, 'category': 'Agency Fees'}, {'name': 'Bank charges', 'amount': 190.0, 'category': 'Agency Fees'}]
+2024-10-17 12:57:46,440 [INFO] gui: FDA tab updated with new PDA data
+2024-10-17 13:08:00,954 [INFO] __main__: Запуск приложения
+2024-10-17 13:08:01,304 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-17 13:08:01,304 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 41 9
+2024-10-17 13:08:01,304 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 62 143839
+2024-10-17 13:08:01,330 [DEBUG] PIL.Image: Importing BlpImagePlugin
+2024-10-17 13:08:01,331 [DEBUG] PIL.Image: Importing BmpImagePlugin
+2024-10-17 13:08:01,331 [DEBUG] PIL.Image: Importing BufrStubImagePlugin
+2024-10-17 13:08:01,331 [DEBUG] PIL.Image: Importing CurImagePlugin
+2024-10-17 13:08:01,331 [DEBUG] PIL.Image: Importing DcxImagePlugin
+2024-10-17 13:08:01,331 [DEBUG] PIL.Image: Importing DdsImagePlugin
+2024-10-17 13:08:01,333 [DEBUG] PIL.Image: Importing EpsImagePlugin
+2024-10-17 13:08:01,333 [DEBUG] PIL.Image: Importing FitsImagePlugin
+2024-10-17 13:08:01,334 [DEBUG] PIL.Image: Importing FliImagePlugin
+2024-10-17 13:08:01,334 [DEBUG] PIL.Image: Importing FpxImagePlugin
+2024-10-17 13:08:01,334 [DEBUG] PIL.Image: Image: failed to import FpxImagePlugin: No module named 'olefile'
+2024-10-17 13:08:01,334 [DEBUG] PIL.Image: Importing FtexImagePlugin
+2024-10-17 13:08:01,335 [DEBUG] PIL.Image: Importing GbrImagePlugin
+2024-10-17 13:08:01,335 [DEBUG] PIL.Image: Importing GifImagePlugin
+2024-10-17 13:08:01,335 [DEBUG] PIL.Image: Importing GribStubImagePlugin
+2024-10-17 13:08:01,335 [DEBUG] PIL.Image: Importing Hdf5StubImagePlugin
+2024-10-17 13:08:01,335 [DEBUG] PIL.Image: Importing IcnsImagePlugin
+2024-10-17 13:08:01,336 [DEBUG] PIL.Image: Importing IcoImagePlugin
+2024-10-17 13:08:01,336 [DEBUG] PIL.Image: Importing ImImagePlugin
+2024-10-17 13:08:01,336 [DEBUG] PIL.Image: Importing ImtImagePlugin
+2024-10-17 13:08:01,337 [DEBUG] PIL.Image: Importing IptcImagePlugin
+2024-10-17 13:08:01,337 [DEBUG] PIL.Image: Importing JpegImagePlugin
+2024-10-17 13:08:01,337 [DEBUG] PIL.Image: Importing Jpeg2KImagePlugin
+2024-10-17 13:08:01,337 [DEBUG] PIL.Image: Importing McIdasImagePlugin
+2024-10-17 13:08:01,337 [DEBUG] PIL.Image: Importing MicImagePlugin
+2024-10-17 13:08:01,337 [DEBUG] PIL.Image: Image: failed to import MicImagePlugin: No module named 'olefile'
+2024-10-17 13:08:01,337 [DEBUG] PIL.Image: Importing MpegImagePlugin
+2024-10-17 13:08:01,337 [DEBUG] PIL.Image: Importing MpoImagePlugin
+2024-10-17 13:08:01,339 [DEBUG] PIL.Image: Importing MspImagePlugin
+2024-10-17 13:08:01,339 [DEBUG] PIL.Image: Importing PalmImagePlugin
+2024-10-17 13:08:01,340 [DEBUG] PIL.Image: Importing PcdImagePlugin
+2024-10-17 13:08:01,340 [DEBUG] PIL.Image: Importing PcxImagePlugin
+2024-10-17 13:08:01,340 [DEBUG] PIL.Image: Importing PdfImagePlugin
+2024-10-17 13:08:01,344 [DEBUG] PIL.Image: Importing PixarImagePlugin
+2024-10-17 13:08:01,345 [DEBUG] PIL.Image: Importing PngImagePlugin
+2024-10-17 13:08:01,345 [DEBUG] PIL.Image: Importing PpmImagePlugin
+2024-10-17 13:08:01,345 [DEBUG] PIL.Image: Importing PsdImagePlugin
+2024-10-17 13:08:01,345 [DEBUG] PIL.Image: Importing QoiImagePlugin
+2024-10-17 13:08:01,345 [DEBUG] PIL.Image: Importing SgiImagePlugin
+2024-10-17 13:08:01,345 [DEBUG] PIL.Image: Importing SpiderImagePlugin
+2024-10-17 13:08:01,346 [DEBUG] PIL.Image: Importing SunImagePlugin
+2024-10-17 13:08:01,346 [DEBUG] PIL.Image: Importing TgaImagePlugin
+2024-10-17 13:08:01,346 [DEBUG] PIL.Image: Importing TiffImagePlugin
+2024-10-17 13:08:01,346 [DEBUG] PIL.Image: Importing WebPImagePlugin
+2024-10-17 13:08:01,349 [DEBUG] PIL.Image: Importing WmfImagePlugin
+2024-10-17 13:08:01,350 [DEBUG] PIL.Image: Importing XbmImagePlugin
+2024-10-17 13:08:01,350 [DEBUG] PIL.Image: Importing XpmImagePlugin
+2024-10-17 13:08:01,350 [DEBUG] PIL.Image: Importing XVThumbImagePlugin
+2024-10-17 13:08:01,351 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 165116 13
+2024-10-17 13:08:01,352 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 165141 65536
+2024-10-17 13:08:01,384 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-17 13:08:01,384 [DEBUG] PIL.PngImagePlugin: STREAM b'sBIT' 41 4
+2024-10-17 13:08:01,384 [DEBUG] PIL.PngImagePlugin: b'sBIT' 41 4 (unknown)
+2024-10-17 13:08:01,384 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 57 9
+2024-10-17 13:08:01,384 [DEBUG] PIL.PngImagePlugin: STREAM b'tEXt' 78 25
+2024-10-17 13:08:01,384 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 115 8192
+2024-10-17 13:08:01,390 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-17 13:08:01,390 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 41 9
+2024-10-17 13:08:01,390 [DEBUG] PIL.PngImagePlugin: STREAM b'tEXt' 62 25
+2024-10-17 13:08:01,390 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 99 8192
+2024-10-17 13:08:01,393 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-17 13:08:01,393 [DEBUG] PIL.PngImagePlugin: STREAM b'sBIT' 41 4
+2024-10-17 13:08:01,393 [DEBUG] PIL.PngImagePlugin: b'sBIT' 41 4 (unknown)
+2024-10-17 13:08:01,393 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 57 9
+2024-10-17 13:08:01,393 [DEBUG] PIL.PngImagePlugin: STREAM b'tEXt' 78 25
+2024-10-17 13:08:01,393 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 115 8192
+2024-10-17 13:08:01,397 [DEBUG] PIL.PngImagePlugin: STREAM b'IHDR' 16 13
+2024-10-17 13:08:01,397 [DEBUG] PIL.PngImagePlugin: STREAM b'sBIT' 41 4
+2024-10-17 13:08:01,397 [DEBUG] PIL.PngImagePlugin: b'sBIT' 41 4 (unknown)
+2024-10-17 13:08:01,397 [DEBUG] PIL.PngImagePlugin: STREAM b'pHYs' 57 9
+2024-10-17 13:08:01,397 [DEBUG] PIL.PngImagePlugin: STREAM b'tEXt' 78 25
+2024-10-17 13:08:01,397 [DEBUG] PIL.PngImagePlugin: STREAM b'IDAT' 115 8192
+2024-10-17 13:08:01,404 [INFO] fda_tab: Populating FDA table with data: []
+2024-10-17 13:08:19,990 [INFO] gui: CV рассчитан: 59634.8032
+2024-10-17 13:08:24,691 [INFO] gui: Начало расчета
+2024-10-17 13:08:24,695 [INFO] gui: Расчет успешно завершен
+2024-10-17 13:08:24,695 [INFO] gui: PDA Data: [{'name': 'Tonnage dues (In/out)', 'amount': 16602.384, 'category': 'Dues'}, {'name': 'Canal dues (in/out)', 'amount': 3053.3120000000004, 'category': 'Dues'}, {'name': 'Lighthouse dues', 'amount': 2683.575, 'category': 'Dues'}, {'name': 'Berth dues', 'amount': 1669.78, 'category': 'Dues'}, {'name': 'Sanitary dues', 'amount': 1049.576, 'category': 'Dues'}, {'name': 'Administrative dues', 'amount': 1049.576, 'category': 'Dues'}, {'name': 'Port information fee', 'amount': 387.6275, 'category': 'Dues'}, {'name': 'Inward pilotage in', 'amount': 994.7117999999999, 'category': 'Dues'}, {'name': 'Inward pilotage out', 'amount': 994.7117999999999, 'category': 'Dues'}, {'name': 'Outward pilotage in', 'amount': 1402.6152, 'category': 'Dues'}, {'name': 'Outward pilotage out', 'amount': 1402.6152, 'category': 'Dues'}, {'name': 'Services of VTCS', 'amount': 6397.6368365, 'category': 'Dues'}, {'name': 'Tugs in', 'amount': 16220.720000000001, 'category': 'Dues'}, {'name': 'Tugs out', 'amount': 16220.720000000001, 'category': 'Dues'}, {'name': 'Mooring in', 'amount': 815.997632, 'category': 'Dues'}, {'name': 'Mooring out', 'amount': 815.997632, 'category': 'Dues'}, {'name': 'Agency fee', 'amount': 8712.0, 'category': 'Agency Fees'}, {'name': 'Bank charges', 'amount': 190.0, 'category': 'Agency Fees'}]
+2024-10-17 13:08:24,695 [INFO] fda_tab: Updating FDA tab with PDA data: [{'name': 'Tonnage dues (In/out)', 'amount': 16602.384, 'category': 'Dues'}, {'name': 'Canal dues (in/out)', 'amount': 3053.3120000000004, 'category': 'Dues'}, {'name': 'Lighthouse dues', 'amount': 2683.575, 'category': 'Dues'}, {'name': 'Berth dues', 'amount': 1669.78, 'category': 'Dues'}, {'name': 'Sanitary dues', 'amount': 1049.576, 'category': 'Dues'}, {'name': 'Administrative dues', 'amount': 1049.576, 'category': 'Dues'}, {'name': 'Port information fee', 'amount': 387.6275, 'category': 'Dues'}, {'name': 'Inward pilotage in', 'amount': 994.7117999999999, 'category': 'Dues'}, {'name': 'Inward pilotage out', 'amount': 994.7117999999999, 'category': 'Dues'}, {'name': 'Outward pilotage in', 'amount': 1402.6152, 'category': 'Dues'}, {'name': 'Outward pilotage out', 'amount': 1402.6152, 'category': 'Dues'}, {'name': 'Services of VTCS', 'amount': 6397.6368365, 'category': 'Dues'}, {'name': 'Tugs in', 'amount': 16220.720000000001, 'category': 'Dues'}, {'name': 'Tugs out', 'amount': 16220.720000000001, 'category': 'Dues'}, {'name': 'Mooring in', 'amount': 815.997632, 'category': 'Dues'}, {'name': 'Mooring out', 'amount': 815.997632, 'category': 'Dues'}, {'name': 'Agency fee', 'amount': 8712.0, 'category': 'Agency Fees'}, {'name': 'Bank charges', 'amount': 190.0, 'category': 'Agency Fees'}]
+2024-10-17 13:08:24,696 [INFO] fda_tab: Populating FDA table with data: [{'name': 'Tonnage dues (In/out)', 'amount': 16602.384, 'category': 'Dues'}, {'name': 'Canal dues (in/out)', 'amount': 3053.3120000000004, 'category': 'Dues'}, {'name': 'Lighthouse dues', 'amount': 2683.575, 'category': 'Dues'}, {'name': 'Berth dues', 'amount': 1669.78, 'category': 'Dues'}, {'name': 'Sanitary dues', 'amount': 1049.576, 'category': 'Dues'}, {'name': 'Administrative dues', 'amount': 1049.576, 'category': 'Dues'}, {'name': 'Port information fee', 'amount': 387.6275, 'category': 'Dues'}, {'name': 'Inward pilotage in', 'amount': 994.7117999999999, 'category': 'Dues'}, {'name': 'Inward pilotage out', 'amount': 994.7117999999999, 'category': 'Dues'}, {'name': 'Outward pilotage in', 'amount': 1402.6152, 'category': 'Dues'}, {'name': 'Outward pilotage out', 'amount': 1402.6152, 'category': 'Dues'}, {'name': 'Services of VTCS', 'amount': 6397.6368365, 'category': 'Dues'}, {'name': 'Tugs in', 'amount': 16220.720000000001, 'category': 'Dues'}, {'name': 'Tugs out', 'amount': 16220.720000000001, 'category': 'Dues'}, {'name': 'Mooring in', 'amount': 815.997632, 'category': 'Dues'}, {'name': 'Mooring out', 'amount': 815.997632, 'category': 'Dues'}, {'name': 'Agency fee', 'amount': 8712.0, 'category': 'Agency Fees'}, {'name': 'Bank charges', 'amount': 190.0, 'category': 'Agency Fees'}]
+2024-10-17 13:08:24,703 [INFO] gui: FDA tab updated with new PDA data
+2024-10-17 13:09:53,453 [INFO] gui: Начало генерации PDF по пути: /var/folders/7m/7s9l3kgd3jjdnhm3rys7l72c0000gn/T/v_4okm67.pdf
+2024-10-17 13:09:53,465 [DEBUG] gui: Загрузка шаблона Excel
+2024-10-17 13:10:11,513 [INFO] gui: Начало расчета
+2024-10-17 13:10:11,523 [INFO] gui: Расчет успешно завершен
+2024-10-17 13:10:11,523 [INFO] gui: PDA Data: [{'name': 'Agency fee', 'amount': 8712.0, 'category': 'Agency Fees'}, {'name': 'Bank charges', 'amount': 190.0, 'category': 'Agency Fees'}]
+2024-10-17 13:10:11,523 [INFO] fda_tab: Updating FDA tab with PDA data: [{'name': 'Agency fee', 'amount': 8712.0, 'category': 'Agency Fees'}, {'name': 'Bank charges', 'amount': 190.0, 'category': 'Agency Fees'}]
+2024-10-17 13:10:11,524 [INFO] fda_tab: Populating FDA table with data: [{'name': 'Agency fee', 'amount': 8712.0, 'category': 'Agency Fees'}, {'name': 'Bank charges', 'amount': 190.0, 'category': 'Agency Fees'}]
+2024-10-17 13:10:11,529 [INFO] gui: FDA tab updated with new PDA data

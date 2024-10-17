@@ -224,7 +224,7 @@ class ProformaApp:
         right_fields = [
             ("Vessel name:", 'vessel_name'),
             ("Vessel flag:", 'vessel_flag'),
-            ("Enter Port:", 'enter_port'),
+            ("Enter Port:", 'port'),
             ("Cargo loaded:", 'cargo_loaded'),
             ("Quantity of cargo, mts:", 'cargo_qtty'),
             ("Acc name:", 'acc_name'),
@@ -241,6 +241,11 @@ class ProformaApp:
             if var_name in ['overtime_in', 'overtime_out']:
                 combobox = ttk.Combobox(frame, values=["0%", "25%", "50%", "100%"], state="readonly")
                 combobox.set("0%")
+                combobox.pack(side=LEFT, fill=X, expand=True)
+                self.entries[var_name] = combobox
+            elif var_name == 'port':
+                combobox = ttk.Combobox(frame, values=["Chornomorsk", "Odesa", "Pivdenniy"], state="readonly")
+                combobox.set("Chornomorsk")
                 combobox.pack(side=LEFT, fill=X, expand=True)
                 self.entries[var_name] = combobox
             else:
@@ -580,7 +585,7 @@ class ProformaApp:
             self.tree.delete(item)
 
         # Обновление информационных меток
-        self.port_label.config(text=f"Enter Port: {self.entries['enter_port'].get()}")
+        self.port_label.config(text=f"Port: {self.entries['port'].get()}")
         self.vessel_name_label.config(text=f"Vessel name: {self.entries['vessel_name'].get()}")
         self.vessel_flag_label.config(text=f"Vessel flag: {self.entries['vessel_flag'].get()}")
         self.cargo_loaded_label.config(text=f"Cargo loaded: {self.entries['cargo_loaded'].get()}")
@@ -719,7 +724,7 @@ class ProformaApp:
         # Подготовка данных для замены
         replacements = {
             '{{cv}}': format_amount(self.calculator.cv),
-            '{{enter_port}}': self.entries['enter_port'].get(),
+            '{{port}}': self.entries['port'].get(),
             '{{vessel_name}}': self.entries['vessel_name'].get(),
             '{{vessel_flag}}': self.entries['vessel_flag'].get(),
             '{{cargo_loaded}}': self.entries['cargo_loaded'].get(),
